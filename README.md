@@ -36,7 +36,7 @@ Notre objectif est de redonner vie à cette association via son site, pour augme
 - Analyse critique commencée.  
 
 ## 6. Répartition des tâches
-
+-
 ## 7. Prochaines étapes
 - Préparer la soutenance de Mission 1 (fin octobre).  
 
