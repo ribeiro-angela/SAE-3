@@ -33,7 +33,8 @@ Notre objectif est de redonner vie à cette association via son site, pour augme
 ## 5. Avancement du projet
 - Mission 1 en cours.  
 - Choix du site fait (Armée du Salut).  
-- Analyse critique commencée.  
+- Analyse critique commencée.
+- maquette en cours
 
 ## 6. Répartition des tâches
 -
