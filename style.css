@@ -1,3 +1,20 @@
+/* Police Google font*/
+
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif ;
+}
+
+header{
+
+}
+
+/*
 body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
@@ -43,3 +60,4 @@ footer a:hover {
     color: #c8102e;
     text-decoration: underline;
 }
+*/
