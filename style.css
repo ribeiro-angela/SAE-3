@@ -1,40 +1,65 @@
 /* Police Google font*/
 
-
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+
+
+:root {
+    /*Nos couleurs*/
+    --primary-color: #212f3c;
+    --white-color: #fff;
+    --secondary-color: #2c3e50;
+    --darkRed-color:darkred;
+}
+
+
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif ;
-    background-color: #212f3c;
+
     list-style-type: none; /*enlever les points*/
 }
 body {
     margin: 0;
-    padding: 15px;
+    padding: 0;
     min-height: 100vh;
     position: relative;
 }
 .content{
     padding-bottom: 60px; /* espace pour ne pas cacher le contenu */
 }
+
+header {
+    position: fixed;
+    width: 100%;
+    z-index:5;
+    background-color: var(--primary-color);
+}
+
+
+
 /* Navbar styling*/
 header .navbar{  /* placer à droite */
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding-right: 20px;
+    background-color: var(--primary-color);
+
 }
 
+.logo-container { /*pour que le logo reste à sa taille normal, ici c'est le container qui gère l'espace*/
+    padding: 10px 0 10px 20px;
+    display: inline-block;
+}
 .logo-image {
     height: 60px;         /* Taille du logo (ajuste selon ton besoin) */
     width: auto;          /* Pour garder les proportions naturelles */
-    margin-right: 100px;   /* Espace entre le logo et le texte */
+    margin-right: 20px;   /* Espace entre le logo et le texte */
     display: inline-block;
     vertical-align: middle;
-
 }
 
 .navbar .nav-logo .logo-text{
@@ -43,7 +68,13 @@ header .navbar{  /* placer à droite */
 .navbar .nav-menu .nav-link { /* couleur des lien nav*/
     padding : 10px 10px;
     color: whitesmoke;
+    border-radius: 10px;
+    transition: 0.3s ease;
+}
 
+.navbar .nav-menu .nav-link:hover {
+    background-color: var(--secondary-color);
+    color: var(--white-color);
 }
 
 .navbar .nav-menu {
@@ -52,24 +83,85 @@ header .navbar{  /* placer à droite */
     font-size: 12px;
 }
 
+.slogan-section{
+    min-height: 100vh;
+    background-color: var(--primary-color);
+}
+
+.slogan-section .section-content{
+    display: flex;
+    margin-left: 20px;
+    align-items: center;
+    min-height: 100vh;
+    color:var(--white-color);
+    justify-content: space-between;
+}
+
+
+.slogan-section .slogan-details .title{
+    font-size: 60px;
+    margin-bottom: 10px;
+    color: var(--white-color);
+    font-family: "poppins";
+}
+
+.slogan-section .slogan-details .subtitle{
+    margin-top: 8px;
+    margin-bottom: 80px;
+    max-width: 70%;
+    font-size: 16px;
+    font-weight: lighter;
+}
+
+
+.slogan-section .slogan-details .button{
+    display: flex;
+    gap: 23px;
+}
+.slogan-section .slogan-details a.button{
+    padding: 10px 20px;
+    margin: 10px;
+    border: 2px solid transparent;
+    color: var(--primary-color);
+    border-radius: 50px;
+    background-color: var(--darkRed-color);
+    font-weight: normal;
+    transition: 0.3s ease;
+}
+
+.slogan-section .slogan-details .button:hover{
+    color: var(--darkRed-color);
+    border-color: var(--white-color);
+    background-color: transparent;
+}
+
+
+
+
 /*footer*/
 footer {
     position: absolute;
     bottom: 0;
     width: 100%;
-    background-color: #2c3e50;
-    color: white;
+    background-color: var(--secondary-color);
+    color: var(--white-color);
     text-align: center;
     padding: 20px;
     margin-top: 40px;
 }
 
-/* title */
 
+
+
+
+
+/* title
 h1{
     text-align: center;
-    color: darkred;
+    color: var(--darkRed-color);
 }
+
+ */
 
 /*
 body {
