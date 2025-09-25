@@ -9,10 +9,11 @@
     box-sizing: border-box;
     font-family: "Poppins", sans-serif ;
     background-color: #212f3c;
+    list-style-type: none; /*enlever les points*/
 }
 body {
     margin: 0;
-    padding: 0;
+    padding: 15px;
     min-height: 100vh;
     position: relative;
 }
@@ -24,28 +25,31 @@ header .navbar{  /* placer à droite */
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding-right: 20px;
 }
 
 .logo-image {
-    height: 50px;         /* Taille du logo (ajuste selon ton besoin) */
+    height: 60px;         /* Taille du logo (ajuste selon ton besoin) */
     width: auto;          /* Pour garder les proportions naturelles */
     margin-right: 100px;   /* Espace entre le logo et le texte */
     display: inline-block;
     vertical-align: middle;
-    padding-left: 15px;
+
 }
 
 .navbar .nav-logo .logo-text{
 
 }
 .navbar .nav-menu .nav-link { /* couleur des lien nav*/
+    padding : 10px 10px;
     color: whitesmoke;
 
 }
 
 .navbar .nav-menu {
-    display: flex;*
-
+    display: flex;
+    gap: 10px;
+    font-size: 12px;
 }
 
 /*footer*/
