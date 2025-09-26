@@ -1,72 +1,72 @@
 /* Police Google font*/
-
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
-
 
 :root {
     /*Nos couleurs*/
     --primary-color: #212f3c;
     --white-color: #fff;
     --secondary-color: #2c3e50;
-    --darkRed-color:darkred;
+    --darkRed-color: darkred;
+
+    /* Footer spécifiques */
+    --footer-deep: #212f3c;
+    --footer-mid: #28353e;
+    --newsletter-bg: #5b2c2c;
+    --accent: #8b1e1e;
+    --muted: #cfcfcf;
+    --white: #ffffff;
 }
-
-
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Poppins", sans-serif ;
-
-    list-style-type: none; /*enlever les points*/
+    font-family: "Poppins", sans-serif;
+    list-style-type: none;
 }
+
 body {
     margin: 0;
     padding: 0;
     min-height: 100vh;
     position: relative;
 }
-.content{
+
+.content {
     padding-bottom: 60px; /* espace pour ne pas cacher le contenu */
 }
 
 header {
     position: fixed;
     width: 100%;
-    z-index:5;
+    z-index: 5;
     background-color: var(--primary-color);
 }
 
-
-
 /* Navbar styling*/
-header .navbar{  /* placer à droite */
+header .navbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding-right: 20px;
     background-color: var(--primary-color);
-
 }
 
-.logo-container { /*pour que le logo reste à sa taille normal, ici c'est le container qui gère l'espace*/
+.logo-container {
     padding: 10px 0 10px 20px;
     display: inline-block;
 }
+
 .logo-image {
-    height: 60px;         /* Taille du logo (ajuste selon ton besoin) */
-    width: auto;          /* Pour garder les proportions naturelles */
-    margin-right: 20px;   /* Espace entre le logo et le texte */
+    height: 60px;
+    width: auto;
+    margin-right: 20px;
     display: inline-block;
     vertical-align: middle;
 }
 
-.navbar .nav-logo .logo-text{
-
-}
-.navbar .nav-menu .nav-link { /* couleur des lien nav*/
-    padding : 10px 10px;
+.navbar .nav-menu .nav-link {
+    padding: 10px 10px;
     color: whitesmoke;
     border-radius: 10px;
     transition: 0.3s ease;
@@ -83,29 +83,28 @@ header .navbar{  /* placer à droite */
     font-size: 12px;
 }
 
-.slogan-section{
+.slogan-section {
     min-height: 100vh;
     background-color: var(--primary-color);
 }
 
-.slogan-section .section-content{
+.slogan-section .section-content {
     display: flex;
     margin-left: 20px;
     align-items: center;
     min-height: 100vh;
-    color:var(--white-color);
+    color: var(--white-color);
     justify-content: space-between;
 }
 
-
-.slogan-section .slogan-details .title{
+.slogan-section .slogan-details .title {
     font-size: 60px;
     margin-bottom: 10px;
     color: var(--white-color);
     font-family: "poppins";
 }
 
-.slogan-section .slogan-details .subtitle{
+.slogan-section .slogan-details .subtitle {
     margin-top: 8px;
     margin-bottom: 80px;
     max-width: 70%;
@@ -113,12 +112,12 @@ header .navbar{  /* placer à droite */
     font-weight: lighter;
 }
 
-
-.slogan-section .slogan-details .button{
+.slogan-section .slogan-details .button {
     display: flex;
     gap: 23px;
 }
-.slogan-section .slogan-details a.button{
+
+.slogan-section .slogan-details a.button {
     padding: 10px 20px;
     margin: 10px;
     border: 2px solid transparent;
@@ -129,84 +128,164 @@ header .navbar{  /* placer à droite */
     transition: 0.3s ease;
 }
 
-.slogan-section .slogan-details .button:hover{
+.slogan-section .slogan-details .button:hover {
     color: var(--darkRed-color);
     border-color: var(--white-color);
     background-color: transparent;
 }
 
+/* --- Footer --- */
+.wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
 
-
-
-/*footer*/
-footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    background-color: var(--secondary-color);
-    color: var(--white-color);
-    text-align: center;
-    padding: 20px;
+.site-footer {
+    font-family: "Poppins", sans-serif;
+    color: var(--white);
     margin-top: 40px;
+    background: var(--footer-mid);
 }
 
-
-
-
-
-
-/* title
-h1{
+/* Newsletter */
+.footer-newsletter {
+    background: var(--newsletter-bg);
+    padding: 36px 0;
+    color: var(--white);
+}
+.footer-newsletter h3 {
     text-align: center;
-    color: var(--darkRed-color);
+    font-weight: 600;
+    margin-bottom: 12px;
 }
-
- */
-
-/*
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
-    background: #ffffff;
-    color: #2c3e50;
+.newsletter-form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
 }
-
-
-
-h1{
+.newsletter-form input[type="email"] {
+    padding: 12px 14px;
+    border: none;
+    border-radius: 3px;
+    min-width: 280px;
+    font-size: 14px;
+}
+.newsletter-form button {
+    padding: 12px 18px;
+    border: none;
+    border-radius: 3px;
+    background: var(--accent);
+    color: var(--white);
+    cursor: pointer;
+    font-weight: 600;
+}
+.newsletter-form button:hover {
+    opacity: 0.95;
+}
+.newsletter-note {
     text-align: center;
-    margin: 20px 0;
-    color: #c8102e;
+    color: #e7dcdc;
+    font-size: 13px;
+    max-width: 820px;
+    margin: 6px auto 0;
 }
 
-p {
-    max-width: 800px;
-    margin: 10px auto;
-    padding: 0 15px;
-    font-size: 18px;
-    text-align: justify;
+/* Footer main */
+.footer-main {
+    display: flex;
+    gap: 30px;
+    padding: 38px 0;
+    background: var(--footer-deep);
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+.col {
+    flex: 1 1 300px;
+    min-width: 220px;
 }
 
-
-footer {
-    background-color: #2c3e50;
-    color: white;
-    text-align: center;
-    padding: 20px 10px;
-    margin-top: 40px;
+/* Left column */
+.footer-logo {
+    width: 78px;
+    height: auto;
+    display: block;
+    margin-bottom: 12px;
 }
-
-footer a {
-    color: #f5f5f5;
+.footer-left p,
+.footer-left .footer-links {
+    margin-top: 6px;
+}
+.footer-links a {
+    display: block;
+    color: var(--white);
     text-decoration: none;
-    margin: 0 10px;
+    margin: 6px 0;
+    font-size: 14px;
 }
-
-
-footer a:hover {
-    color: #c8102e;
+.footer-links a:hover {
     text-decoration: underline;
 }
-*/
+
+/* Center column */
+.footer-center h4 {
+    margin-bottom: 8px;
+    font-size: 18px;
+}
+.footer-center address {
+    font-style: normal;
+    color: var(--muted);
+    margin-bottom: 10px;
+}
+.footer-center .phone a {
+    color: var(--white);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* Right column */
+.footer-right h4 {
+    margin-bottom: 8px;
+    font-size: 18px;
+}
+.social {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 12px;
+}
+.social img {
+    width: 34px;
+    height: 34px;
+    display: block;
+}
+.partners img {
+    display: block;
+    max-width: 110px;
+    margin: 8px 0;
+}
+
+/* Bottom bar */
+.footer-bottom {
+    background: #1a252f;
+    padding: 12px 0;
+    text-align: center;
+    font-size: 13px;
+    color: #c9d0d4;
+}
+
+/* Responsive */
+@media (max-width: 800px) {
+    .newsletter-form input[type="email"] {
+        min-width: 200px;
+    }
+    .footer-main {
+        padding: 24px 0;
+    }
+    .social img {
+        width: 28px;
+        height: 28px;
+    }
+}
