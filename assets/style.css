@@ -31,6 +31,7 @@ body {
     padding: 0;
     min-height: 100vh;
     position: relative;
+    background-color: var(--white-color);
 }
 
 .content {
@@ -135,12 +136,12 @@ header .navbar {
     font-weight: lighter;
 }
 
-.slogan-section .slogan-details .button {
+.slogan-section .slogan-details .button_accueil {
     display: flex;
     gap: 23px;
 }
 
-.slogan-section .slogan-details a.button {
+.slogan-section .slogan-details a.button_accueil {
     padding: 10px 20px;
     margin: 10px;
     border: none;
@@ -151,10 +152,11 @@ header .navbar {
     transition: 0.3s ease;
 }
 
-.slogan-section .slogan-details .button:hover {
+.slogan-section .slogan-details .button_accueil:hover {
     color: var(--darkRed-color);
     border-color: var(--white-color);
-    background-color: var(--primary-color);}
+    background-color: var(--primary-color);
+}
 
 
 /*image de début d'accueil*/
@@ -325,12 +327,12 @@ header .navbar {
 
 
     /*button "nous contacter et "je fais un don"*/
-    .slogan-section .slogan-details .button{
+    .slogan-section .slogan-details .button_accueil{
         flex-direction: column;
         align-items: center;
         gap: 0.5rem;
     }
-    .slogan-section .slogan-details a.button{
+    .slogan-section .slogan-details a.button_accueil{
         width:100%;
         max-width: 250px;
         text-align: center;
