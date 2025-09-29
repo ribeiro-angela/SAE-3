@@ -93,9 +93,28 @@ header .navbar {
 }
 
 
-.nav-item > ul{
+.nav-item {
+    position: relative;
+}
+.nav-item > ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    background-color: var(--secondary-color);
+    opacity: 0.95;
+    padding: 10px;
+    border-radius: 5px;
+    min-width: 150px;
+    z-index: 100;
+}
+
+.nav-item:hover > ul {
     display: flex;
-    list-style: none;
+}
+.nav-item > ul .nav-link {
+    padding: 8px 12px;
+    display: block;
 }
 /*-----------------------------------------------------*/
 
@@ -422,11 +441,10 @@ header .navbar {
     }
 
 
-    /*menu burger (marche pas)*/
+
     .menu-burger {
         display: block;
     }
-
     .nav-menu {
         /* Menu caché par défaut */
         transform: translateX(100%);
@@ -436,14 +454,25 @@ header .navbar {
         position: absolute;
         top: 80%;
         padding:15px;
-    }
+        right: -3%;
+        width: 170px;
+        height: calc(100vh - 80px); /* C'est la Hauteur jusqu'en bas */
+        background: rgba(0, 0, 0, 0.70); /*Pour la transparence*/
 
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+        border-radius: 10px 0 0 10px;
+
+        flex-direction: column;
+        gap: 30px !important;
+    }
     /* Quand le checkbox est coché */
     .menu-toggle:checked ~ .nav-menu {
         transform: translateX(0);
         opacity: 1;
         visibility: visible;
     }
+
+
 
 
     /*PAGE DON*/
