@@ -99,10 +99,10 @@ header .navbar {
 .nav-item > ul {
     display: none;
     flex-direction: column;
-    position: absolute;
+    position: static;
     top: 100%;
     background-color: var(--secondary-color);
-    opacity: 0.95;
+    opacity: 0.80;
     padding: 10px;
     border-radius: 5px;
     min-width: 150px;
@@ -136,6 +136,8 @@ header .navbar {
 .menu-toggle{
     display: none;
 }
+
+
 /*--------------------------------------------------------*/
 
 
