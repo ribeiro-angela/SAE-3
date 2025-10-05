@@ -164,132 +164,459 @@
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
+/* ==================== PAGE HISTOIRE ==================== */
 
-/* Timeline */
-.timeline-container {
+/* ==================== PAGE HISTOIRE - CSS SIMPLE ET FONCTIONNEL ==================== */
+
+/* === Hero avec image === */
+.hist-hero {
     position: relative;
-    padding-left: 80px;
-    padding-right: 80px;
-    max-width: 900px;
-    margin: 0 auto;
+    height: 65vh;
+    min-height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--secondary-color);
+    overflow: hidden;
 }
 
-.timeline-line {
+.hist-hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.hist-hero-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.25;
+}
+
+.hist-hero-bg::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(33, 47, 60, 0.85), rgba(44, 62, 80, 0.85));
+}
+
+.hist-hero-text {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    color: white;
+    padding: 30px;
+}
+
+.hist-hero-text h1 {
+    font-size: 58px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.hist-hero-text p {
+    font-size: 19px;
+    font-style: italic;
+}
+
+/* === Timeline === */
+.hist-timeline {
+    background: #f5f7f9;
+    padding: 70px 30px;
+}
+
+.hist-wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* Ligne verticale centrale */
+.hist-wrapper::before {
+    content: '';
     position: absolute;
     left: 50%;
     top: 0;
     bottom: 0;
     width: 4px;
-    background: #d9534f;
-    transform: translateX(-50%);
-    z-index: 6;
+    background: linear-gradient(to bottom, #8b1e1e 0%, #b8935c 100%);
+    transform: translateX(-2px);
 }
 
-.timeline-item {
+/* Bloc timeline */
+.hist-block {
     position: relative;
-    margin: 50px 0;
+    margin-bottom: 70px;
     display: flex;
+    align-items: flex-start;
+    width: 100%;
+}
+
+/* Gauche */
+.hist-gauche {
+    justify-content: flex-end;
+}
+
+.hist-gauche .hist-carte {
+    margin-right: 80px;
+    text-align: right;
+}
+
+/* Droite */
+.hist-droite {
+    justify-content: flex-start;
+}
+
+.hist-droite .hist-carte {
+    margin-left: 80px;
+    text-align: left;
+}
+
+/* Centre */
+.hist-centre {
+    justify-content: center;
+}
+
+/* Badge année */
+.hist-badge {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    top: 10px;
+}
+
+.hist-badge span {
+    display: block;
+    background: #8b1e1e;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 17px;
+    border: 4px solid white;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.25);
+}
+
+.hist-badge-large span {
+    padding: 10px 16px;
+    font-size: 14px;
+}
+
+/* Carte contenu */
+.hist-carte {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    max-width: 450px;
+    transition: all 0.3s ease;
+}
+
+.hist-carte:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 28px rgba(0,0,0,0.12);
+}
+
+.hist-carte h3 {
+    font-size: 24px;
+    color: var(--primary-color);
+    margin-bottom: 18px;
+    font-weight: 600;
+}
+
+.hist-carte p {
+    font-size: 15px;
+    line-height: 1.75;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+/* Personne */
+.hist-personne {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 10px;
+}
+
+.hist-gauche .hist-personne {
+    flex-direction: row-reverse;
+}
+
+.hist-personne img {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #8b1e1e;
+}
+
+.hist-personne div {
+    flex: 1;
+}
+
+.hist-gauche .hist-personne div {
+    text-align: right;
+}
+
+.hist-personne strong {
+    display: block;
+    font-size: 16px;
+    color: var(--primary-color);
+    margin-bottom: 3px;
+}
+
+.hist-personne span {
+    font-size: 13px;
+    color: #777;
+}
+
+/* Citation */
+.hist-citation {
+    margin-top: 20px;
+    padding: 18px;
+    background: #f8f9fa;
+    border-left: 4px solid #8b1e1e;
+    border-radius: 4px;
+}
+
+.hist-citation p {
+    font-style: italic;
+    color: #333;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
+.hist-citation span {
+    font-size: 13px;
+    color: #777;
+}
+
+/* Stats */
+.hist-stats {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    padding: 45px 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+    max-width: 850px;
+}
+
+.hist-stats h3 {
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    margin-bottom: 35px;
+    font-weight: 600;
+}
+
+.hist-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.hist-stat-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    backdrop-filter: blur(8px);
+}
+
+.hist-stat-num {
+    font-size: 42px;
+    font-weight: 700;
+    color: #d4af37;
+    margin-bottom: 8px;
+}
+
+.hist-stat-txt {
+    font-size: 14px;
+    color: #e8e8e8;
+    line-height: 1.4;
+}
+
+/* Direction */
+.hist-direction {
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.hist-direction h3 {
+    text-align: center;
+    font-size: 32px;
+    color: var(--primary-color);
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+.hist-dir-card {
+    background: white;
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    display: flex;
+    gap: 25px;
     align-items: center;
 }
 
-.timeline-left {
-    justify-content: flex-start;
-    text-align: right;
-    padding-right: 120px;
-}
-
-.timeline-right {
-    justify-content: flex-end;
-    text-align: left;
-    padding-left: 120px;
-}
-
-.timeline-item .founder-img,
-.timeline-item .director-img {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    width: 80px;
-    height: 80px;
+.hist-dir-card img {
+    width: 160px;
+    height: 160px;
+    border-radius: 12px;
     object-fit: cover;
-    border-radius: 50%;
-    border: 3px solid #d9534f;
-    transform: translate(-50%, -50%);
-    background: white;
-    z-index: 9;
-    box-shadow: 0 0 8px rgba(0,0,0,0.15);
+    flex-shrink: 0;
 }
 
-.timeline-right .timeline-content {
-    margin-left: 100px;
+.hist-dir-card h4 {
+    font-size: 26px;
+    color: var(--primary-color);
+    margin-bottom: 8px;
 }
 
-/* Spécifique pour la carte centrale */
-.timeline-center .director-img {
-    position: relative;
-    left: auto;
-    transform: none;
-    margin: 0 auto 10px;
-    display: block;
+.hist-dir-card p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #555;
 }
 
+/* Newsletter */
+.hist-newsletter {
+    background: linear-gradient(135deg, #5b2c2c 0%, #7a3838 100%);
+    padding: 55px 30px;
+    text-align: center;
+    color: white;
+}
 
+.hist-newsletter h3 {
+    font-size: 28px;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
 
+.hist-form {
+    display: flex;
+    gap: 12px;
+    max-width: 550px;
+    margin: 0 auto;
+    justify-content: center;
+    flex-wrap: wrap;
+}
 
+.hist-form input[type="email"] {
+    flex: 1;
+    min-width: 280px;
+    padding: 13px 18px;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+}
 
+.hist-form button {
+    padding: 13px 28px;
+    border: none;
+    border-radius: 6px;
+    background: #8b1e1e;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 15px;
+}
 
+.hist-form button:hover {
+    background: #6d1717;
+}
+
+/* ==================== RESPONSIVE ==================== */
 @media (max-width: 900px) {
-
-    /* bouton "nous contacter" et "je fais un don" */
-    .slogan-section .slogan-details .button_accueil {
-        flex-direction: column;
-        align-items: center;
-        gap: 0.5rem;
+    /* Hero */
+    .hist-hero {
+        height: 50vh;
+        min-height: 350px;
     }
 
-    .slogan-section .slogan-details a.button_accueil {
-        width: 100%;
-        max-width: 250px;
-        text-align: center;
-        margin: 5px 0;
-    }
-
-    /* Masquer image slogan, garder image don en mode compact */
-    .image-slogan img {
-        display: none;
-    }
-
-    .image-Don {
-        display: compact;
-    }
-
-
-    /* PAGE DON */
-    .Dons-section {
-        padding: 60px 40px;
-    }
-
-    .title-Don {
-        font-size: 50px !important;
-    }
-
-    .subtitle-Dons {
-        font-size: 16px !important;
-    }
-
-    .section-association .section-content {
-        flex-direction: column;
-        gap: 40px;
-    }
-
-    .section-association .association-image {
-        width: 100%;
-        max-width: 450px;
-        transform: rotate(0deg);
-    }
-
-    .section-association h2 {
+    .hist-hero-text h1 {
         font-size: 38px;
     }
-}
 
+    .hist-hero-text p {
+        font-size: 16px;
+    }
+
+    /* Timeline mobile */
+    .hist-timeline {
+        padding: 50px 20px;
+    }
+
+    .hist-wrapper::before {
+        left: 20px;
+    }
+
+    .hist-block {
+        flex-direction: column;
+        padding-left: 60px;
+        margin-bottom: 50px;
+    }
+
+    .hist-badge {
+        left: 20px;
+        transform: none;
+    }
+
+    .hist-gauche .hist-carte,
+    .hist-droite .hist-carte {
+        margin: 0;
+        text-align: left;
+        max-width: 100%;
+    }
+
+    .hist-personne {
+        flex-direction: row !important;
+    }
+
+    .hist-personne div {
+        text-align: left !important;
+    }
+
+    /* Stats */
+    .hist-stats {
+        padding: 35px 25px;
+    }
+
+    .hist-stats-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    /* Direction */
+    .hist-dir-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 25px;
+    }
+
+    /* Newsletter */
+    .hist-newsletter h3 {
+        font-size: 22px;
+    }
+
+    .hist-form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .hist-form input[type="email"],
+    .hist-form button {
+        width: 100%;
+    }
+}
