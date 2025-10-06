@@ -6,6 +6,8 @@
     <title>Notre Histoire - Armée du Salut</title>
     <link rel="stylesheet" href="../assets/style.css">
     <link rel="stylesheet" href="../assets/pages.css">
+    <!-- Ajout d'une police moderne -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -31,42 +33,70 @@
                 <a href="#" class="nav-link">Actualités</a>
             </li>
             <li class="nav-item">
-                <a href="histoire.html" class="nav-link">Notre Histoire</a>
+                <a href="histoire.html" class="nav-link active">Notre Histoire</a>
             </li>
             <li class="nav-item">
                 <a href="#" class="nav-link">Spiritualité</a>
+            </li>
+            <!-- Ajout d'un bouton d'action visible -->
+            <li class="nav-item nav-cta">
+                <a href="#" class="nav-link cta-button">Faire un don</a>
             </li>
         </ul>
     </nav>
 </header>
 
-<!-- Hero Section -->
 <section class="hist-hero">
     <div class="hist-hero-bg">
-        <img src="../assets/image/soupedenuit1925.jpg" alt="Soupe de nuit 1925">
+        <img src="../assets/image/soupedenuit1925.jpg" alt="Distribution de soupe de nuit en 1925 par l'Armée du Salut">
     </div>
+    <div class="hist-hero-overlay"></div>
     <div class="hist-hero-text">
+        <div class="breadcrumb">
+            <a href="../index.html">Accueil</a> > <span>Notre Histoire</span>
+        </div>
         <h1>Notre Histoire</h1>
         <p>Plus de 140 ans d'engagement au service des plus démunis</p>
+        <!-- Ajout d'un CTA dans le hero -->
+        <div class="hero-cta">
+            <a href="#timeline" class="btn-primary">Découvrir notre histoire</a>
+            <a href="#" class="btn-secondary">Nos actions aujourd'hui</a>
+        </div>
+    </div>
+    <div class="scroll-indicator">
+        <span>Défiler</span>
+        <div class="arrow"></div>
     </div>
 </section>
 
-<!-- Timeline principale -->
-<section class="hist-timeline">
+<section class="quick-nav">
+    <div class="container">
+        <h2>Explorez notre histoire</h2>
+        <div class="quick-nav-items">
+            <a href="#1878" class="quick-nav-item">1878 - Fondation</a>
+            <a href="#1881" class="quick-nav-item">1881 - France</a>
+            <a href="#1914" class="quick-nav-item">1914-1918 - Guerre</a>
+            <a href="#1920" class="quick-nav-item">1920-1930 - Expansion</a>
+            <a href="#2000" class="quick-nav-item">2000 - Fondation</a>
+        </div>
+    </div>
+</section>
+
+<section class="hist-timeline" id="timeline">
     <div class="hist-wrapper">
 
         <!-- 1878 -->
-        <div class="hist-block hist-gauche">
+        <div class="hist-block hist-gauche" id="1878">
             <div class="hist-badge">
                 <span>1878</span>
             </div>
             <div class="hist-carte">
+                <div class="hist-tag">Fondation</div>
                 <h3>L'Armée du Salut voit le jour à Londres</h3>
-                <p>En pleine révolution industrielle, le pasteur William Booth est choqué par les conditions de vie indignes du monde ouvrier, notamment dans l'Est de Londres. Il crée en 1865 ce qui deviendra en 1878 l'Armée du Salut pour répondre aux besoins matériels et spirituels des plus démunis.
-</p>
-<p>Le pasteur, en quête d'efficacité, s'inspire du modèle militaire pour structurer une « armée » afin de répondre aux besoins élémentaires tant matériels que spirituels. Une triple mission résumée dans sa devise : "Soup, Soap, Salvation" !
-</p>                <div class="hist-personne">
-                    <img src="../assets/image/william.jpg" alt="William Booth">
+                <p>En pleine révolution industrielle, le pasteur William Booth est choqué par les conditions de vie indignes du monde ouvrier, notamment dans l'Est de Londres. Il crée en 1865 ce qui deviendra en 1878 l'Armée du Salut pour répondre aux besoins matériels et spirituels des plus démunis.</p>
+                <p>Le pasteur, en quête d'efficacité, s'inspire du modèle militaire pour structurer une « armée » afin de répondre aux besoins élémentaires tant matériels que spirituels. Une triple mission résumée dans sa devise : "Soup, Soap, Salvation" !</p>
+                <div class="hist-personne">
+                    <img src="../assets/image/william.jpg" alt="Portrait de William Booth">
                     <div>
                         <strong>William Booth</strong>
                         <span>Fondateur de l'Armée du Salut</span>
@@ -76,15 +106,16 @@
         </div>
 
         <!-- 1881 -->
-        <div class="hist-block hist-droite">
+        <div class="hist-block hist-droite" id="1881">
             <div class="hist-badge">
                 <span>1881</span>
             </div>
             <div class="hist-carte">
+                <div class="hist-tag">Expansion</div>
                 <h3>Implantation en France</h3>
-<p> Seize ans plus tard, une femme franchit la Manche pour porter la mission de l'Armée du Salut en France.Catherine Booth veut "sauver les âmes et secourir les êtres". Avec l'aide des jeunes officières qui l'accompagnent elle va réussir sa mission et faire ainsi de la France le premier pays d'Europe où l'Armée du Salut s'implante. </p>
+                <p>Seize ans plus tard, une femme franchit la Manche pour porter la mission de l'Armée du Salut en France. Catherine Booth veut "sauver les âmes et secourir les êtres". Avec l'aide des jeunes officières qui l'accompagnent, elle va réussir sa mission et faire ainsi de la France le premier pays d'Europe où l'Armée du Salut s'implante.</p>
                 <div class="hist-personne">
-                    <img src="../assets/image/Catherine.jpg" alt="Catherine Booth">
+                    <img src="../assets/image/Catherine.jpg" alt="Portrait de Catherine Booth">
                     <div>
                         <strong>Catherine Booth</strong>
                         <span>Fille de William Booth</span>
@@ -94,26 +125,36 @@
         </div>
 
         <!-- 1914-1918 -->
-        <div class="hist-block hist-gauche">
+        <div class="hist-block hist-gauche" id="1914">
             <div class="hist-badge hist-badge-large">
                 <span>1914-1918</span>
             </div>
             <div class="hist-carte">
+                <div class="hist-tag">Action humanitaire</div>
                 <h3>Les "Foyers du soldat"</h3>
-<p>Entre 1914 et 1918, l'Armée du Salut crée des "Foyers du soldat" pour venir en aide aux soldats, aux veuves et aux orphelins de la Première Guerre mondiale, ses actions lui permettront d'être reconnue et appréciée en France.</p>
+                <p>Entre 1914 et 1918, l'Armée du Salut crée des "Foyers du soldat" pour venir en aide aux soldats, aux veuves et aux orphelins de la Première Guerre mondiale, ses actions lui permettront d'être reconnue et appréciée en France.</p>
+                <!-- Galerie d'images pour illustrer -->
+                <div class="hist-gallery">
+                    <div class="gallery-item">
+                        <img src="../assets/image/foyer-soldat1.jpg" alt="Foyer du soldat pendant la guerre">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="../assets/image/foyer-soldat2.jpg" alt="Distribution de nourriture aux soldats">
+                    </div>
+                </div>
                 <div class="hist-citation">
                     <p>"Sa devise : Secourir, Accompagner, Reconstruire"</p>
                 </div>
             </div>
         </div>
 
-        <!-- Statistiques -->
         <div class="hist-block hist-centre">
             <div class="hist-stats">
                 <h3>L'Armée du Salut en chiffres</h3>
+                <p class="stats-subtitle">Un impact mesurable à travers le monde</p>
                 <div class="hist-stats-grid">
                     <div class="hist-stat-item">
-                        <div class="hist-stat-num">1 714</div>
+                        <div class="hist-stat-num">1714</div>
                         <div class="hist-stat-txt">Personnes mobilisées dans le monde</div>
                     </div>
                     <div class="hist-stat-item">
@@ -121,27 +162,31 @@
                         <div class="hist-stat-txt">Pays d'intervention</div>
                     </div>
                     <div class="hist-stat-item">
-                        <div class="hist-stat-num">2 800</div>
+                        <div class="hist-stat-num">2800</div>
                         <div class="hist-stat-txt">Salariés en France</div>
                     </div>
                     <div class="hist-stat-item">
-                        <div class="hist-stat-num">240+</div>
+                        <div class="hist-stat-num">240</div>
                         <div class="hist-stat-txt">Établissements en France</div>
                     </div>
+                </div>
+                <div class="stats-cta">
+                    <p>Vous souhaitez contribuer à notre mission ?</p>
+                    <a href="#" class="btn-primary">Devenez bénévole</a>
                 </div>
             </div>
         </div>
 
         <!-- 1920-1930 -->
-        <div class="hist-block hist-droite">
+        <div class="hist-block hist-droite" id="1920">
             <div class="hist-badge hist-badge-large">
                 <span>1920-1930</span>
             </div>
             <div class="hist-carte">
+                <div class="hist-tag">Développement</div>
                 <h3>Construction des grands établissements</h3>
-<p>Dans les deux décennies qui suivent la Grande Guerre, l'oeuvre de l'Armée du Salut se développe notamment sous l'impulsion du couple Albin et Blanche Peyron. Des années 1920 aux années 1930, plusieurs grands établissements de l'Armée du Salut sont construits comme le Palais de la Femme, la Cité de Refuge, Le Palais du Peuple, la Résidence Catherine Booth.
-    En 1931, l'Association des Oeuvres Françaises de Bienfaisance de l'Armée du Salut (AOFBAS), reconnue d'utilité publique, est créée ce qui permet à l'Armée du Salut de recevoir des dons et legs et de les affecter aux projets en cours. La même année, les premières Soupes de nuit sont distribuées dans les rues de Paris.
-</p>
+                <p>Dans les deux décennies qui suivent la Grande Guerre, l'oeuvre de l'Armée du Salut se développe notamment sous l'impulsion du couple Albin et Blanche Peyron. Des années 1920 aux années 1930, plusieurs grands établissements de l'Armée du Salut sont construits comme le Palais de la Femme, la Cité de Refuge, Le Palais du Peuple, la Résidence Catherine Booth.</p>
+                <p>En 1931, l'Association des Oeuvres Françaises de Bienfaisance de l'Armée du Salut (AOFBAS), reconnue d'utilité publique, est créée ce qui permet à l'Armée du Salut de recevoir des dons et legs et de les affecter aux projets en cours. La même année, les premières Soupes de nuit sont distribuées dans les rues de Paris.</p>
                 <div class="hist-citation">
                     <p>"Avec Dieu, avec l'autre, avec soi"</p>
                     <span>Devise de la Congrégation de l'Armée du Salut</span>
@@ -150,28 +195,42 @@
         </div>
 
         <!-- 2000 -->
-        <div class="hist-block hist-gauche">
+        <div class="hist-block hist-gauche" id="2000">
             <div class="hist-badge">
                 <span>2000</span>
             </div>
             <div class="hist-carte">
+                <div class="hist-tag">Modernisation</div>
                 <h3>Création de la Fondation de l'Armée du Salut</h3>
-<p>Cette association est remplacée par la Fondation de l'Armée du Salut reconnue d'utilité publique, en 2000 (décret du 11 avril 2000). La Fondation intervient essentiellement dans la prévention de la violence auprès des jeunes et l'éducation, la réinsertion de femmes et d'hommes et de familles en situation d'exclusion, l'insertion professionnelle des personnes handicapées et déficientes mentales ou encore l'accompagnement des personnes âgées dépendantes. Sa devise : Secourir, Accompagner, Reconstruire.
-</p>
-<p> La Fondation emploie 2 800 salariés et compte plus de 240 établissements et services d'action sociale en France. Elle est habilitée à recevoir legs et donations et fonctionne aussi grâce à ses donateurs et testateurs.
-</p>
+                <p>Cette association est remplacée par la Fondation de l'Armée du Salut reconnue d'utilité publique, en 2000 (décret du 11 avril 2000). La Fondation intervient essentiellement dans la prévention de la violence auprès des jeunes et l'éducation, la réinsertion de femmes et d'hommes et de familles en situation d'exclusion, l'insertion professionnelle des personnes handicapées et déficientes mentales ou encore l'accompagnement des personnes âgées dépendantes. Sa devise : Secourir, Accompagner, Reconstruire.</p>
+                <p>La Fondation emploie 2 800 salariés et compte plus de 240 établissements et services d'action sociale en France. Elle est habilitée à recevoir legs et donations et fonctionne aussi grâce à ses donateurs et testateurs.</p>
+                <!-- Ajout d'un lien vers les actions actuelles -->
+                <div class="hist-actions">
+                    <h4>Nos actions aujourd'hui</h4>
+                    <ul>
+                        <li>Accueil d'urgence et hébergement</li>
+                        <li>Aide alimentaire</li>
+                        <li>Insertion professionnelle</li>
+                        <li>Accompagnement des personnes âgées</li>
+                    </ul>
+                    <a href="#" class="btn-outline">Découvrir nos actions</a>
+                </div>
             </div>
         </div>
 
-        <!-- Direction -->
         <div class="hist-block hist-centre">
             <div class="hist-direction">
                 <h3>Direction actuelle</h3>
                 <div class="hist-dir-card">
-                    <img src="../assets/image/jacquesdonze.jpg" alt="Jacques Donzé">
-                    <div>
+                    <div class="dir-image">
+                        <img src="../assets/image/jacquesdonze.jpg" alt="Portrait de Jacques Donzé">
+                    </div>
+                    <div class="dir-info">
                         <h4>Jacques Donzé</h4>
-                        <p>Président de la Fondation de l'Armée du Salut et Supérieur de la Congrégation de l'Armée du Salut en France.</p>
+                        <p class="dir-title">Président de la Fondation de l'Armée du Salut et Supérieur de la Congrégation de l'Armée du Salut en France.</p>
+                        <div class="dir-contact">
+                            <a href="#" class="btn-outline">Contacter</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -180,27 +239,52 @@
     </div>
 </section>
 
-<!-- Newsletter -->
-<section class="hist-newsletter">
-    <h3>Tous les mois, recevez un condensé de contenus utiles :</h3>
-    <form class="hist-form">
-        <input type="email" placeholder="Votre adresse email" required>
-        <button type="submit">S'inscrire</button>
-    </form>
+<section class="hist-cta">
+    <div class="cta-container">
+        <div class="cta-content">
+            <h3>L'histoire continue avec vous</h3>
+            <p>Rejoignez les milliers de personnes qui soutiennent notre action depuis plus d'un siècle.</p>
+            <div class="cta-buttons">
+                <a href="#" class="btn-primary">Faire un don</a>
+                <a href="#" class="btn-secondary">Devenir bénévole</a>
+                <a href="#" class="btn-outline">En savoir plus</a>
+            </div>
+        </div>
+    </div>
 </section>
 
-<!-- Footer -->
+<section class="hist-newsletter">
+    <div class="newsletter-container">
+        <div class="newsletter-text">
+            <h3>Restez informé de notre actualité</h3>
+            <p>Tous les mois, recevez un condensé de nos actions, témoignages et besoins.</p>
+        </div>
+        <form class="hist-form">
+            <div class="form-group">
+                <input type="email" placeholder="Votre adresse email" required>
+                <button type="submit">S'inscrire</button>
+            </div>
+            <div class="form-consent">
+                <input type="checkbox" id="newsletter-consent" required>
+                <label for="newsletter-consent">J'accepte de recevoir la newsletter et je comprends que je peux me désinscrire à tout moment.</label>
+            </div>
+        </form>
+    </div>
+</section>
+
 <footer class="site-footer">
     <div class="footer-main">
         <div class="wrapper" style="display: flex; gap: 30px; flex-wrap: wrap;">
             <div class="col footer-left">
-                <img src="../assets/image/logo.png" alt="Logo" class="footer-logo">
+                <img src="../assets/image/logo.png" alt="Logo de la Fondation de l'Armée du Salut" class="footer-logo">
                 <p>Fondation de l'Armée du Salut</p>
+                <p class="footer-mission">Secourir, Accompagner, Reconstruire depuis 1878</p>
                 <div class="footer-links">
-                    <a href="#">Accueil</a>
+                    <a href="../index.html">Accueil</a>
                     <a href="#">Actions Sociales</a>
                     <a href="#">Actualités</a>
                     <a href="#">Spiritualité</a>
+                    <a href="histoire.html" class="active">Notre Histoire</a>
                 </div>
             </div>
 
@@ -213,14 +297,23 @@
                 <p class="phone">
                     Tél: <a href="tel:+33140305050">01 40 30 50 50</a>
                 </p>
+                <div class="footer-actions">
+                    <a href="#" class="footer-btn">Faire un don</a>
+                    <a href="#" class="footer-btn secondary">Devenir bénévole</a>
+                </div>
             </div>
 
             <div class="col footer-right">
                 <h4>Suivez-nous</h4>
                 <div class="social">
-                    <a href="#"><img src="../assets/image/facebook.png" alt="Facebook"></a>
-                    <a href="#"><img src="../assets/image/linkedin.png" alt="LinkedIn"></a>
-                    <a href="#"><img src="../assets/image/instagram.jpg" alt="Instagram"></a>
+                    <a href="#" aria-label="Facebook"><img src="../assets/image/facebook.png" alt="Facebook"></a>
+                    <a href="#" aria-label="LinkedIn"><img src="../assets/image/linkedin.png" alt="LinkedIn"></a>
+                    <a href="#" aria-label="Instagram"><img src="../assets/image/instagram.jpg" alt="Instagram"></a>
+                </div>
+                <div class="footer-legal">
+                    <a href="#">Mentions légales</a>
+                    <a href="#">Politique de confidentialité</a>
+                    <a href="#">Accessibilité</a>
                 </div>
             </div>
         </div>
