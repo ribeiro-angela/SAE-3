@@ -1,33 +1,42 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Notre Histoire - Armée du Salut</title>
-    <link rel="stylesheet" href="../assets/style.css">
     <link rel="stylesheet" href="../assets/pages.css">
-    <!-- Ajout d'une police moderne -->
+    <link rel="stylesheet" href="../assets/navbar.css">
+    <link rel="stylesheet" href="../assets/footer.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 <header>
-    <nav class="navbar">
-        <div class="logo-container">
-            <a href="../index.html" class="nav-logo">
-                <img src="../assets/image/logo.png" alt="logo AS" class="logo-image">
-            </a>
-        </div>
+    <div class="nav-container">
+        <a href="../index.html" class="nav-logo">
+            <img src="../assets/image/logo.png" alt="logo AS" class="logo-image">
+            <span class="logo-text">Armée du Salut</span>
+        </a>
 
-        <input type="checkbox" id="menu-toggle" class="menu-toggle">
-        <label for="menu-toggle" class="menu-burger">☰</label>
+        <button class="menu-toggle" id="menu-toggle">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
 
-        <ul class="nav-menu">
+        <ul class="nav-menu" id="nav-menu">
             <li class="nav-item">
                 <a href="accueil.html" class="nav-link">Accueil</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item dropdown">
                 <a href="#" class="nav-link">Actions Sociales</a>
+                <div class="dropdown-menu">
+                    <a href="#" class="dropdown-link">Hébergement d'urgence</a>
+                    <a href="#" class="dropdown-link">Aide alimentaire</a>
+                    <a href="#" class="dropdown-link">Insertion professionnelle</a>
+                    <a href="#" class="dropdown-link">Accompagnement des seniors</a>
+                </div>
             </li>
             <li class="nav-item">
                 <a href="#" class="nav-link">Actualités</a>
@@ -38,12 +47,12 @@
             <li class="nav-item">
                 <a href="#" class="nav-link">Spiritualité</a>
             </li>
-            <!-- Ajout d'un bouton d'action visible -->
-            <li class="nav-item nav-cta">
-                <a href="#" class="nav-link cta-button">Faire un don</a>
-            </li>
         </ul>
-    </nav>
+
+        <div class="nav-actions">
+            <a href="#" class="btn-donate">Faire un don</a>
+        </div>
+    </div>
 </header>
 
 <section class="hist-hero">
@@ -57,7 +66,6 @@
         </div>
         <h1>Notre Histoire</h1>
         <p>Plus de 140 ans d'engagement au service des plus démunis</p>
-        <!-- Ajout d'un CTA dans le hero -->
         <div class="hero-cta">
             <a href="#timeline" class="btn-primary">Découvrir notre histoire</a>
             <a href="#" class="btn-secondary">Nos actions aujourd'hui</a>
@@ -253,63 +261,67 @@
     </div>
 </section>
 
-<section class="hist-newsletter">
-    <div class="newsletter-container">
-        <div class="newsletter-text">
-            <h3>Restez informé de notre actualité</h3>
-            <p>Tous les mois, recevez un condensé de nos actions, témoignages et besoins.</p>
-        </div>
-        <form class="hist-form">
-            <div class="form-group">
-                <input type="email" placeholder="Votre adresse email" required>
-                <button type="submit">S'inscrire</button>
-            </div>
-            <div class="form-consent">
-                <input type="checkbox" id="newsletter-consent" required>
-                <label for="newsletter-consent">J'accepte de recevoir la newsletter et je comprends que je peux me désinscrire à tout moment.</label>
-            </div>
+<section class="footer-newsletter">
+    <div class="wrapper">
+        <h3>Restez informé de notre actualité</h3>
+        <p>Tous les mois, recevez un condensé de nos actions, témoignages et besoins.</p>
+        <form class="newsletter-form">
+            <input type="email" placeholder="Votre adresse email" required>
+            <button type="submit">S'inscrire</button>
         </form>
+        <p class="newsletter-note">En vous inscrivant, vous acceptez notre <a href="#">politique de confidentialité</a></p>
     </div>
 </section>
 
 <footer class="site-footer">
     <div class="footer-main">
-        <div class="wrapper" style="display: flex; gap: 30px; flex-wrap: wrap;">
-            <div class="col footer-left">
-                <img src="../assets/image/logo.png" alt="Logo de la Fondation de l'Armée du Salut" class="footer-logo">
-                <p>Fondation de l'Armée du Salut</p>
-                <p class="footer-mission">Secourir, Accompagner, Reconstruire depuis 1878</p>
-                <div class="footer-links">
-                    <a href="../index.html">Accueil</a>
-                    <a href="#">Actions Sociales</a>
-                    <a href="#">Actualités</a>
-                    <a href="#">Spiritualité</a>
-                    <a href="histoire.html" class="active">Notre Histoire</a>
+        <div class="wrapper">
+            <div class="footer-content">
+                <div class="footer-col footer-about">
+                    <img src="../assets/image/logo.png" alt="Logo de la Fondation de l'Armée du Salut" class="footer-logo">
+                    <p>Fondation de l'Armée du Salut</p>
+                    <p class="footer-mission">Secourir, Accompagner, Reconstruire depuis 1878</p>
+                    <div class="footer-actions">
+                        <a href="#" class="footer-btn">Faire un don</a>
+                        <a href="#" class="footer-btn secondary">Devenir bénévole</a>
+                    </div>
+                </div>
+
+                <div class="footer-col footer-links">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="../index.html">Accueil</a></li>
+                        <li><a href="#">Actions Sociales</a></li>
+                        <li><a href="#">Actualités</a></li>
+                        <li><a href="#">Spiritualité</a></li>
+                        <li><a href="histoire.html">Notre Histoire</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col footer-contact">
+                    <h4>Contact</h4>
+                    <address>
+                        <strong>Siège national</strong><br>
+                        60 rue des Frères Flavien<br>
+                        75020 Paris, France
+                    </address>
+                    <p class="phone">
+                        Tél: <a href="tel:+33140305050">01 40 30 50 50</a>
+                    </p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><img src="../assets/image/facebook.png" alt="Facebook"></a>
+                        <a href="#" aria-label="LinkedIn"><img src="../assets/image/linkedin.png" alt="LinkedIn"></a>
+                        <a href="#" aria-label="Instagram"><img src="../assets/image/instagram.jpg" alt="Instagram"></a>
+                    </div>
                 </div>
             </div>
+        </div>
+    </div>
 
-            <div class="col footer-center">
-                <h4>Contact</h4>
-                <address>
-                    60 rue des Frères Flavien<br>
-                    75020 Paris, France
-                </address>
-                <p class="phone">
-                    Tél: <a href="tel:+33140305050">01 40 30 50 50</a>
-                </p>
-                <div class="footer-actions">
-                    <a href="#" class="footer-btn">Faire un don</a>
-                    <a href="#" class="footer-btn secondary">Devenir bénévole</a>
-                </div>
-            </div>
-
-            <div class="col footer-right">
-                <h4>Suivez-nous</h4>
-                <div class="social">
-                    <a href="#" aria-label="Facebook"><img src="../assets/image/facebook.png" alt="Facebook"></a>
-                    <a href="#" aria-label="LinkedIn"><img src="../assets/image/linkedin.png" alt="LinkedIn"></a>
-                    <a href="#" aria-label="Instagram"><img src="../assets/image/instagram.jpg" alt="Instagram"></a>
-                </div>
+    <div class="footer-bottom">
+        <div class="wrapper">
+            <div class="footer-bottom-content">
+                <p>&copy; 2025 Fondation de l'Armée du Salut - Tous droits réservés</p>
                 <div class="footer-legal">
                     <a href="#">Mentions légales</a>
                     <a href="#">Politique de confidentialité</a>
@@ -318,12 +330,9 @@
             </div>
         </div>
     </div>
-
-    <div class="footer-bottom">
-        <div class="wrapper">
-            <p>&copy; 2025 Fondation de l'Armée du Salut - Tous droits réservés</p>
-        </div>
-    </div>
 </footer>
+
+
+
 </body>
-</html>
+</html>>
