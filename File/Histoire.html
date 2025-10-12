@@ -1,20 +1,25 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Notre Histoire - Armée du Salut</title>
-    <link rel="stylesheet" href="../assets/pages.css">
+
+    <!-- CSS existants -->
     <link rel="stylesheet" href="../assets/navbar.css">
     <link rel="stylesheet" href="../assets/footer.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/histoire.css">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
 <header>
     <div class="nav-container">
-        <a href="../index.html" class="nav-logo">
+        <a href="../accueil.html" class="nav-logo">
             <img src="../assets/image/logo.png" alt="logo AS" class="logo-image">
             <span class="logo-text">Armée du Salut</span>
         </a>
@@ -55,165 +60,152 @@
     </div>
 </header>
 
-<section class="hist-hero">
-    <div class="hist-hero-bg">
-        <img src="../assets/image/soupedenuit1925.jpg" alt="Distribution de soupe de nuit en 1925 par l'Armée du Salut">
-    </div>
-    <div class="hist-hero-overlay"></div>
-    <div class="hist-hero-text">
-        <div class="breadcrumb">
-            <a href="../index.html">Accueil</a> > <span>Notre Histoire</span>
-        </div>
+<!-- HERO -->
+<section class="hero-histoire">
+    <div class="hero-content">
         <h1>Notre Histoire</h1>
-        <p>Plus de 140 ans d'engagement au service des plus démunis</p>
-        <div class="hero-cta">
-            <a href="#timeline" class="btn-primary">Découvrir notre histoire</a>
-            <a href="#" class="btn-secondary">Nos actions aujourd'hui</a>
-        </div>
-    </div>
-    <div class="scroll-indicator">
-        <span>Défiler</span>
-        <div class="arrow"></div>
+        <p class="hero-subtitle">Plus de 140 ans d'engagement au service des plus démunis</p>
     </div>
 </section>
 
-<section class="quick-nav">
+<!-- NAVIGATION ANNÉES -->
+<nav class="annees-nav">
     <div class="container">
-        <h2>Explorez notre histoire</h2>
-        <div class="quick-nav-items">
-            <a href="#1878" class="quick-nav-item">1878 - Fondation</a>
-            <a href="#1881" class="quick-nav-item">1881 - France</a>
-            <a href="#1914" class="quick-nav-item">1914-1918 - Guerre</a>
-            <a href="#1920" class="quick-nav-item">1920-1930 - Expansion</a>
-            <a href="#2000" class="quick-nav-item">2000 - Fondation</a>
-        </div>
+        <a href="#y1878" class="annee-tab">1878</a>
+        <a href="#y1881" class="annee-tab">1881</a>
+        <a href="#y1914" class="annee-tab">1914-18</a>
+        <a href="#y1920" class="annee-tab">1920-30</a>
+        <a href="#y2000" class="annee-tab">2000</a>
     </div>
-</section>
+</nav>
 
-<section class="hist-timeline" id="timeline">
-    <div class="hist-wrapper">
+<!-- TIMELINE -->
+<section class="timeline-wrapper">
+    <div class="container">
 
         <!-- 1878 -->
-        <div class="hist-block hist-gauche" id="1878">
-            <div class="hist-badge">
-                <span>1878</span>
-            </div>
-            <div class="hist-carte">
-                <div class="hist-tag">Fondation</div>
+        <article class="timeline-item" id="y1878">
+            <div class="carte-histoire">
+                <div class="annee-stamp">1878</div>
+                <span class="categorie-tag">Fondation</span>
                 <h3>L'Armée du Salut voit le jour à Londres</h3>
                 <p>En pleine révolution industrielle, le pasteur William Booth est choqué par les conditions de vie indignes du monde ouvrier, notamment dans l'Est de Londres. Il crée en 1865 ce qui deviendra en 1878 l'Armée du Salut pour répondre aux besoins matériels et spirituels des plus démunis.</p>
-                <p>Le pasteur, en quête d'efficacité, s'inspire du modèle militaire pour structurer une « armée » afin de répondre aux besoins élémentaires tant matériels que spirituels. Une triple mission résumée dans sa devise : "Soup, Soap, Salvation" !</p>
-                <div class="hist-personne">
-                    <img src="../assets/image/william.jpg" alt="Portrait de William Booth">
-                    <div>
-                        <strong>William Booth</strong>
-                        <span>Fondateur de l'Armée du Salut</span>
+                <p>Le pasteur, en quête d'efficacité, s'inspire du modèle militaire pour structurer une « armée » afin de répondre aux besoins élémentaires tant matériels que spirituels.</p>
+
+                <div class="citation-manuscrite">
+                    Soup, Soap, Salvation !
+                </div>
+
+                <div class="personnage-card">
+                    <div class="personnage-inner">
+                        <img src="../assets/image/william.jpg" alt="William Booth">
+                        <div class="personnage-info">
+                            <strong>William Booth</strong>
+                            <span>Fondateur de l'Armée du Salut</span>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </article>
 
         <!-- 1881 -->
-        <div class="hist-block hist-droite" id="1881">
-            <div class="hist-badge">
-                <span>1881</span>
-            </div>
-            <div class="hist-carte">
-                <div class="hist-tag">Expansion</div>
+        <article class="timeline-item" id="y1881">
+            <div class="carte-histoire">
+                <div class="annee-stamp">1881</div>
+                <span class="categorie-tag">Expansion</span>
                 <h3>Implantation en France</h3>
                 <p>Seize ans plus tard, une femme franchit la Manche pour porter la mission de l'Armée du Salut en France. Catherine Booth veut "sauver les âmes et secourir les êtres". Avec l'aide des jeunes officières qui l'accompagnent, elle va réussir sa mission et faire ainsi de la France le premier pays d'Europe où l'Armée du Salut s'implante.</p>
-                <div class="hist-personne">
-                    <img src="../assets/image/Catherine.jpg" alt="Portrait de Catherine Booth">
-                    <div>
-                        <strong>Catherine Booth</strong>
-                        <span>Fille de William Booth</span>
+                <div class="personnage-card">
+                    <div class="personnage-inner">
+                        <img src="../assets/image/Catherine.jpg" alt="Catherine Booth">
+                        <div class="personnage-info">
+                            <strong>Catherine Booth</strong>
+                            <span>Fille de William Booth</span>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </article>
 
         <!-- 1914-1918 -->
-        <div class="hist-block hist-gauche" id="1914">
-            <div class="hist-badge hist-badge-large">
-                <span>1914-1918</span>
-            </div>
-            <div class="hist-carte">
-                <div class="hist-tag">Action humanitaire</div>
+        <article class="timeline-item" id="y1914">
+            <div class="carte-histoire">
+                <div class="annee-stamp">1914</div>
+                <span class="categorie-tag">Action humanitaire</span>
                 <h3>Les "Foyers du soldat"</h3>
                 <p>Entre 1914 et 1918, l'Armée du Salut crée des "Foyers du soldat" pour venir en aide aux soldats, aux veuves et aux orphelins de la Première Guerre mondiale, ses actions lui permettront d'être reconnue et appréciée en France.</p>
-                <!-- Galerie d'images pour illustrer -->
-                <div class="hist-gallery">
-                    <div class="gallery-item">
-                        <img src="../assets/image/foyer-soldat1.jpg" alt="Foyer du soldat pendant la guerre">
+
+                <div class="photos-collage">
+                    <div class="photo-vintage">
+                        <img src="../assets/image/foyer-soldat1.jpg" alt="Foyer du soldat">
                     </div>
-                    <div class="gallery-item">
-                        <img src="../assets/image/foyer-soldat2.jpg" alt="Distribution de nourriture aux soldats">
+                    <div class="photo-vintage">
+                        <img src="../assets/image/foyer-soldat2.jpg" alt="Distribution">
                     </div>
                 </div>
-                <div class="hist-citation">
-                    <p>"Sa devise : Secourir, Accompagner, Reconstruire"</p>
+
+                <div class="citation-manuscrite">
+                    Secourir, Accompagner, Reconstruire
                 </div>
             </div>
-        </div>
+        </article>
 
-        <div class="hist-block hist-centre">
-            <div class="hist-stats">
-                <h3>L'Armée du Salut en chiffres</h3>
-                <p class="stats-subtitle">Un impact mesurable à travers le monde</p>
-                <div class="hist-stats-grid">
-                    <div class="hist-stat-item">
-                        <div class="hist-stat-num">1714</div>
-                        <div class="hist-stat-txt">Personnes mobilisées dans le monde</div>
-                    </div>
-                    <div class="hist-stat-item">
-                        <div class="hist-stat-num">134</div>
-                        <div class="hist-stat-txt">Pays d'intervention</div>
-                    </div>
-                    <div class="hist-stat-item">
-                        <div class="hist-stat-num">2800</div>
-                        <div class="hist-stat-txt">Salariés en France</div>
-                    </div>
-                    <div class="hist-stat-item">
-                        <div class="hist-stat-num">240</div>
-                        <div class="hist-stat-txt">Établissements en France</div>
+        <!-- STATS -->
+        <div class="stats-vintage">
+            <h3>L'Armée du Salut en chiffres</h3>
+            <div class="row g-4">
+                <div class="col-md-3 col-6">
+                    <div class="stat-card">
+                        <span class="stat-nombre">1714</span>
+                        <span class="stat-label">Personnes mobilisées</span>
                     </div>
                 </div>
-                <div class="stats-cta">
-                    <p>Vous souhaitez contribuer à notre mission ?</p>
-                    <a href="#" class="btn-primary">Devenez bénévole</a>
+                <div class="col-md-3 col-6">
+                    <div class="stat-card">
+                        <span class="stat-nombre">134</span>
+                        <span class="stat-label">Pays d'intervention</span>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stat-card">
+                        <span class="stat-nombre">2800</span>
+                        <span class="stat-label">Salariés en France</span>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="stat-card">
+                        <span class="stat-nombre">240</span>
+                        <span class="stat-label">Établissements</span>
+                    </div>
                 </div>
             </div>
         </div>
 
         <!-- 1920-1930 -->
-        <div class="hist-block hist-droite" id="1920">
-            <div class="hist-badge hist-badge-large">
-                <span>1920-1930</span>
-            </div>
-            <div class="hist-carte">
-                <div class="hist-tag">Développement</div>
+        <article class="timeline-item" id="y1920">
+            <div class="carte-histoire">
+                <div class="annee-stamp">1920</div>
+                <span class="categorie-tag">Développement</span>
                 <h3>Construction des grands établissements</h3>
                 <p>Dans les deux décennies qui suivent la Grande Guerre, l'oeuvre de l'Armée du Salut se développe notamment sous l'impulsion du couple Albin et Blanche Peyron. Des années 1920 aux années 1930, plusieurs grands établissements de l'Armée du Salut sont construits comme le Palais de la Femme, la Cité de Refuge, Le Palais du Peuple, la Résidence Catherine Booth.</p>
                 <p>En 1931, l'Association des Oeuvres Françaises de Bienfaisance de l'Armée du Salut (AOFBAS), reconnue d'utilité publique, est créée ce qui permet à l'Armée du Salut de recevoir des dons et legs et de les affecter aux projets en cours. La même année, les premières Soupes de nuit sont distribuées dans les rues de Paris.</p>
-                <div class="hist-citation">
-                    <p>"Avec Dieu, avec l'autre, avec soi"</p>
-                    <span>Devise de la Congrégation de l'Armée du Salut</span>
+
+                <div class="citation-manuscrite">
+                    Avec Dieu, avec l'autre, avec soi
                 </div>
             </div>
-        </div>
+        </article>
 
         <!-- 2000 -->
-        <div class="hist-block hist-gauche" id="2000">
-            <div class="hist-badge">
-                <span>2000</span>
-            </div>
-            <div class="hist-carte">
-                <div class="hist-tag">Modernisation</div>
+        <article class="timeline-item" id="y2000">
+            <div class="carte-histoire">
+                <div class="annee-stamp">2000</div>
+                <span class="categorie-tag">Modernisation</span>
                 <h3>Création de la Fondation de l'Armée du Salut</h3>
                 <p>Cette association est remplacée par la Fondation de l'Armée du Salut reconnue d'utilité publique, en 2000 (décret du 11 avril 2000). La Fondation intervient essentiellement dans la prévention de la violence auprès des jeunes et l'éducation, la réinsertion de femmes et d'hommes et de familles en situation d'exclusion, l'insertion professionnelle des personnes handicapées et déficientes mentales ou encore l'accompagnement des personnes âgées dépendantes. Sa devise : Secourir, Accompagner, Reconstruire.</p>
                 <p>La Fondation emploie 2 800 salariés et compte plus de 240 établissements et services d'action sociale en France. Elle est habilitée à recevoir legs et donations et fonctionne aussi grâce à ses donateurs et testateurs.</p>
-                <!-- Ajout d'un lien vers les actions actuelles -->
-                <div class="hist-actions">
+
+                <div class="actions-box">
                     <h4>Nos actions aujourd'hui</h4>
                     <ul>
                         <li>Accueil d'urgence et hébergement</li>
@@ -221,43 +213,20 @@
                         <li>Insertion professionnelle</li>
                         <li>Accompagnement des personnes âgées</li>
                     </ul>
-                    <a href="#" class="btn-outline">Découvrir nos actions</a>
                 </div>
             </div>
-        </div>
-
-        <div class="hist-block hist-centre">
-            <div class="hist-direction">
-                <h3>Direction actuelle</h3>
-                <div class="hist-dir-card">
-                    <div class="dir-image">
-                        <img src="../assets/image/jacquesdonze.jpg" alt="Portrait de Jacques Donzé">
-                    </div>
-                    <div class="dir-info">
-                        <h4>Jacques Donzé</h4>
-                        <p class="dir-title">Président de la Fondation de l'Armée du Salut et Supérieur de la Congrégation de l'Armée du Salut en France.</p>
-                        <div class="dir-contact">
-                            <a href="#" class="btn-outline">Contacter</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        </article>
 
     </div>
 </section>
 
-<section class="hist-cta">
-    <div class="cta-container">
-        <div class="cta-content">
-            <h3>L'histoire continue avec vous</h3>
-            <p>Rejoignez les milliers de personnes qui soutiennent notre action depuis plus d'un siècle.</p>
-            <div class="cta-buttons">
-                <a href="#" class="btn-primary">Faire un don</a>
-                <a href="#" class="btn-secondary">Devenir bénévole</a>
-                <a href="#" class="btn-outline">En savoir plus</a>
-            </div>
-        </div>
+<!-- CTA VINTAGE -->
+<section class="cta-vintage">
+    <div class="container">
+        <h3>L'histoire continue avec vous</h3>
+        <p>Rejoignez les milliers de personnes qui soutiennent notre action depuis plus d'un siècle</p>
+        <a href="#" class="btn-vintage">Faire un don</a>
+        <a href="#" class="btn-vintage outline">Devenir bénévole</a>
     </div>
 </section>
 
@@ -332,7 +301,5 @@
     </div>
 </footer>
 
-
-
 </body>
-</html>>
+</html>
