@@ -1,8 +1,23 @@
-<header>
-    <nav class="navbar">
+<?php
+?><!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Armée du Salut</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/missions.css">
+  <link rel="stylesheet" href="/assets/css/histoire.css">
+  <link rel="icon" type="image/png" href="/assets/image/logo.png">
+</head>
+<body>
+<header class="fixed-top">
+<nav class="navbar">
         <div class="nav-container">
             <a href="../File/Accueil.html" class="nav-logo">
-                <img src="../assets/image/logo.png" alt="logo AS" class="logo-image">
+                <img src="/assets/image/logo.png" alt="logo AS" class="logo-image">
                 <span class="logo-text">Armée du Salut</span>
             </a>
 
@@ -51,3 +66,4 @@
         </div>
     </nav>
 </header>
+<main>

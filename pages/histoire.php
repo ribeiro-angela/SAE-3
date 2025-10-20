@@ -1,25 +1,5 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Notre Histoire - Armée du Salut</title>
-
-    <!-- CSS existants -->
-    <link rel="stylesheet" href="../assets/navbar.css">
-    <link rel="stylesheet" href="../assets/footer.css">
-    <link rel="stylesheet" href="../assets/histoire.css">
-
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-</head>
-
-<body>
-
-<div id="header"></div>
-
+<?php
+?>
 <!-- HERO -->
 <section class="hero-histoire">
     <div class="hero-content">
@@ -58,7 +38,7 @@
 
                 <div class="personnage-card">
                     <div class="personnage-inner">
-                        <img src="../assets/image/william.jpg" alt="William Booth">
+                        <img src="/assets/image/william.jpg" alt="William Booth">
                         <div class="personnage-info">
                             <strong>William Booth</strong>
                             <span>Fondateur de l'Armée du Salut</span>
@@ -77,7 +57,7 @@
                 <p>Seize ans plus tard, une femme franchit la Manche pour porter la mission de l'Armée du Salut en France. Catherine Booth veut "sauver les âmes et secourir les êtres". Avec l'aide des jeunes officières qui l'accompagnent, elle va réussir sa mission et faire ainsi de la France le premier pays d'Europe où l'Armée du Salut s'implante.</p>
                 <div class="personnage-card">
                     <div class="personnage-inner">
-                        <img src="../assets/image/Catherine.jpg" alt="Catherine Booth">
+                        <img src="/assets/image/Catherine.jpg" alt="Catherine Booth">
                         <div class="personnage-info">
                             <strong>Catherine Booth</strong>
                             <span>Fille de William Booth</span>
@@ -97,10 +77,10 @@
 
                 <div class="photos-collage">
                     <div class="photo-vintage">
-                        <img src="../assets/image/foyer-soldat1.jpg" alt="Foyer du soldat">
+                        <img src="/assets/image/foyer-soldat1.jpg" alt="Foyer du soldat">
                     </div>
                     <div class="photo-vintage">
-                        <img src="../assets/image/foyer-soldat2.jpg" alt="Distribution">
+                        <img src="/assets/image/foyer-soldat2.jpg" alt="Distribution">
                     </div>
                 </div>
 
@@ -188,10 +168,3 @@
         <a href="#" class="btn-vintage outline">Devenir bénévole</a>
     </div>
 </section>
-
-
-<div id="footer"></div>
-
-<script src="../assets/js/include.js"></script>
-</body>
-</html>

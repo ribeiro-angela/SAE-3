@@ -1,20 +1,5 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Nos Missions - Armée du Salut</title>
-
-    <!-- CSS existants -->
-    <link rel="stylesheet" href="../assets/navbar.css">
-    <link rel="stylesheet" href="../assets/footer.css">
-    <link rel="stylesheet" href="../assets/missions.css">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-</head>
-
-<body>
-
+<?php
+?>
 <div id="header"></div>
 
 <main>
@@ -298,7 +283,7 @@
         <div class="wrapper">
             <div class="footer-content">
                 <div class="footer-col footer-about">
-                    <img src="../assets/image/logo.png" alt="Logo Armée du Salut" class="footer-logo">
+                    <img src="/assets/image/logo.png" alt="Logo Armée du Salut" class="footer-logo">
                     <p class="footer-mission">Depuis 1881, l'Armée du Salut vient en aide aux plus démunis avec compassion et détermination.</p>
                     <div class="footer-actions">
                         <a href="Don.html" class="footer-btn">Faire un don</a>
@@ -329,10 +314,10 @@
                         <a href="tel:+33143622500">01 43 62 25 00</a>
                     </p>
                     <div class="social-links">
-                        <a href="#" aria-label="Facebook"><img src="../assets/image/icon-facebook.png" alt="Facebook"></a>
-                        <a href="#" aria-label="Instagram"><img src="../assets/image/icon-instagram.png" alt="Instagram"></a>
-                        <a href="#" aria-label="LinkedIn"><img src="../assets/image/icon-linkedin.png" alt="LinkedIn"></a>
-                        <a href="#" aria-label="Twitter"><img src="../assets/image/icon-twitter.png" alt="Twitter"></a>
+                        <a href="#" aria-label="Facebook"><img src="/assets/image/icon-facebook.png" alt="Facebook"></a>
+                        <a href="#" aria-label="Instagram"><img src="/assets/image/icon-instagram.png" alt="Instagram"></a>
+                        <a href="#" aria-label="LinkedIn"><img src="/assets/image/icon-linkedin.png" alt="LinkedIn"></a>
+                        <a href="#" aria-label="Twitter"><img src="/assets/image/icon-twitter.png" alt="Twitter"></a>
                     </div>
                 </div>
             </div>
@@ -353,5 +338,3 @@
         </div>
     </div>
 </footer>
-
-</body>

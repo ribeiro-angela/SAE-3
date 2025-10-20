@@ -1,20 +1,5 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Armée du salut : Organisation humanitaire</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" href="../assets/image/logo.png">
-    <link rel="stylesheet" href="../assets/pages.css">
-    <link rel="stylesheet" href="../assets/navbar.css">
-    <link rel="stylesheet" href="../assets/footer.css">
-</head>
-
-<body>
-
-<div id="header"></div>
-
+<?php
+?>
 <main>
     <!-- SECTION HERO -->
     <section class="slogan-section">
@@ -28,7 +13,7 @@
                 </div>
             </div>
             <div class="image-slogan">
-                <img src="../assets/image/image-slogan.png" alt="Personnes bénéficiant du soutien de l'Armée du Salut">
+                <img src="/assets/image/image-slogan.png" alt="Personnes bénéficiant du soutien de l'Armée du Salut">
             </div>
         </div>
     </section>
@@ -44,9 +29,9 @@
                     </p>
                 </div>
                 <div class="association-images">
-                    <img src="../assets/image/1.png" alt="Établissement de l'Armée du Salut" class="association-image">
-                    <img src="../assets/image/2.png" alt="Bénévoles en action" class="association-image">
-                    <img src="../assets/image/3.png" alt="Distribution alimentaire" class="association-image">
+                    <img src="/assets/image/1.png" alt="Établissement de l'Armée du Salut" class="association-image">
+                    <img src="/assets/image/2.png" alt="Bénévoles en action" class="association-image">
+                    <img src="/assets/image/3.png" alt="Distribution alimentaire" class="association-image">
                 </div>
             </div>
         </div>
@@ -58,21 +43,21 @@
             <h2>NOUS REJOINDRE</h2>
             <div class="rejoindre-cards">
                 <div class="rejoindre-card">
-                    <img src="../assets/image/benevole.png" alt="Devenir Bénévole" class="rejoindre-card-image">
+                    <img src="/assets/image/benevole.png" alt="Devenir Bénévole" class="rejoindre-card-image">
                     <div class="rejoindre-card-content">
                         <h3>Devenir Bénévole</h3>
                         <p>Chaque personne a des compétences qui peuvent être utiles aux personnes fragiles. Venez découvrir nos différentes missions de bénévolat.</p>
                     </div>
                 </div>
                 <div class="rejoindre-card">
-                    <img src="../assets/image/salarie.png" alt="Devenir Salarié" class="rejoindre-card-image">
+                    <img src="/assets/image/salarie.png" alt="Devenir Salarié" class="rejoindre-card-image">
                     <div class="rejoindre-card-content">
                         <h3>Devenir Salarié</h3>
                         <p>Près de 100 métiers sont exercés chaque jour au service des personnes accueillies. Et si c'était un emploi pour vous dans l'Armée du Salut ?</p>
                     </div>
                 </div>
                 <div class="rejoindre-card">
-                    <img src="../assets/image/soldat.png" alt="Devenir Soldat" class="rejoindre-card-image">
+                    <img src="/assets/image/soldat.png" alt="Devenir Soldat" class="rejoindre-card-image">
                     <div class="rejoindre-card-content">
                         <h3>Devenir Soldat</h3>
                         <p>Un soldat est une personne qui croit en Dieu et fréquente un poste (paroisse) de la Congrégation de l'Armée du Salut et qui décide de s'engager en faveur de son Église.</p>
@@ -88,7 +73,7 @@
             <h2>TÉMOIGNAGES</h2>
             <div class="temoignage-container">
                 <div class="temoignage-image">
-                    <img src="../assets/image/temoignage.png" alt="Personne témoignant">
+                    <img src="/assets/image/temoignage.png" alt="Personne témoignant">
                 </div>
                 <div class="temoignage-card">
                     <span class="quote-mark">"</span>
@@ -104,9 +89,3 @@
         </div>
     </section>
 </main>
-
-<div id="footer"></div>
-
-<script src="../assets/js/include.js"></script>
-</body>
-</html>

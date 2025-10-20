@@ -1,5 +1,8 @@
-<footer class="site-footer">
-    <div class="footer-newsletter">
+<?php
+?>
+</main>
+<footer>
+<div class="footer-newsletter">
         <div class="wrapper">
             <h3>Restez informé</h3>
             <p>Inscrivez-vous à notre newsletter pour recevoir nos actualités</p>
@@ -15,7 +18,7 @@
         <div class="wrapper">
             <div class="footer-content">
                 <div class="footer-col footer-about">
-                    <img src="../assets/image/logo.png" alt="Logo Armée du Salut" class="footer-logo">
+                    <img src="/assets/image/logo.png" alt="Logo Armée du Salut" class="footer-logo">
                     <p class="footer-mission">Depuis 1881, l'Armée du Salut vient en aide aux plus démunis avec compassion et détermination.</p>
                     <div class="footer-actions">
                         <a href="Don.html" class="footer-btn">Faire un don</a>
@@ -46,10 +49,10 @@
                         <a href="tel:+33143622500">01 43 62 25 00</a>
                     </p>
                     <div class="social-links">
-                        <a href="#" aria-label="Facebook"><img src="../assets/image/icon-facebook.png" alt="Facebook"></a>
-                        <a href="#" aria-label="Instagram"><img src="../assets/image/icon-instagram.png" alt="Instagram"></a>
-                        <a href="#" aria-label="LinkedIn"><img src="../assets/image/icon-linkedin.png" alt="LinkedIn"></a>
-                        <a href="#" aria-label="Twitter"><img src="../assets/image/icon-twitter.png" alt="Twitter"></a>
+                        <a href="#" aria-label="Facebook"><img src="/assets/image/icon-facebook.png" alt="Facebook"></a>
+                        <a href="#" aria-label="Instagram"><img src="/assets/image/icon-instagram.png" alt="Instagram"></a>
+                        <a href="#" aria-label="LinkedIn"><img src="/assets/image/icon-linkedin.png" alt="LinkedIn"></a>
+                        <a href="#" aria-label="Twitter"><img src="/assets/image/icon-twitter.png" alt="Twitter"></a>
                     </div>
                 </div>
             </div>
@@ -70,3 +73,6 @@
         </div>
     </div>
 </footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

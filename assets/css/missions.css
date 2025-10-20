@@ -1,42 +1,38 @@
-
-/*----------------NOTRE MISSION PAGE ---------------------*/
-
 body {
     font-family:'Inter',sans-serif;
     background:var(--cream);
     padding-top:80px;
 }
-/* Partie Titre / Sous titre */
+
 .mission_section {
     padding: 300px 80px;
     display: flex;
-    justify-content: flex-start;   /* centre horizontalement */
-    align-items: center;       /* centre verticalement */
-    flex-direction: column;    /* place h1 et p l'un en dessous de l'autre */
+    justify-content: flex-start;   
+    align-items: center;       
+    flex-direction: column;    
 }
-
 
 .mission_section .title h1 {
     font-size: 70px;
-    margin: 10px;   /* espace en bas */
-    text-align: center;        /* centre le texte */
+    margin: 10px;   
+    text-align: center;        
     font-weight: 700;
     color : #8b1e1e;
 
 }
 .mission_section .title p {
     font-size: 30px;
-    height: 50vh;             /* occupe toute la hauteur de la fenêtre */
-    text-align: center;        /* centre le texte */
+    height: 50vh;             
+    text-align: center;        
     color : #1f2937;
 
 }
-/* premier paragraphe + le bloc blanc*/
+
 .mission_content  {
     width: 100%;
     display: flex;
-    justify-content: center;  /* centre horizontalement */
-    padding: 0;       /* espace autour du bloc */
+    justify-content: center;  
+    padding: 0;       
     box-sizing: content-box;
     margin: 0;
 
@@ -51,7 +47,7 @@ body {
 }
 
 .content_box p {
-    margin: 0;  /* supprime la marge par défaut du p */
+    margin: 0;  
     font-size: 20px;
     line-height: 1.6;
     color: black;
@@ -69,7 +65,6 @@ body {
     text-align: center;
 }
 
-/* Le Deuxieme titre de la page */
 .sous-titre h1 {
     font-size: 40px;
     color : black;
@@ -78,7 +73,7 @@ body {
 .sous-titre h2 {
     font-size: 60px;
     color : #8b1e1e;
-    /*padding-bottom: 10px;*/
+    
     font-weight: 700;
 }
 .first-mission{
@@ -120,23 +115,21 @@ body {
     line-height: 33px;
 }
 
-
-/* Les blocs information : secourir / reconstruire / accompagner*/
 .section-card {
     padding: 20px;
-    display: flex;                 /* Aligne les cartes horizontalement */
-    justify-content: center;       /* Centre l’ensemble */
-    align-items: flex-start;       /* Aligne le haut des cartes */
+    display: flex;                 
+    justify-content: center;       
+    align-items: flex-start;       
 
-    gap: 20px;                     /* Espace entre chaque carte */
+    gap: 20px;                     
     flex-wrap: wrap;
 }
 .card {
-    /*position: relative;         /* Position absolue pour placer les cartes librement */
+    
     width: 320px;
     padding: 30px;
-    border-radius: 30px;            /* Coins arrondis */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);     /* Ombre légère */
+    border-radius: 30px;            
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);     
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 
     height: 190px;
@@ -159,25 +152,24 @@ body {
     color: #333;
 }
 .card-secourir {
-    background: linear-gradient(135deg, #f7e3e1 0%, #ffffff 100%); /* beige rosé apaisant */
+    background: linear-gradient(135deg, #f7e3e1 0%, #ffffff 100%); 
 }
 .card-secourir h2 {
-    color: #8b1e1e; /* rouge brun chaleureux */
+    color: #8b1e1e; 
 }
 .card-accompagner {
-    background: linear-gradient(135deg, #e3f2e3 0%, #ffffff 100%); /* vert tendre et rassurant */
+    background: linear-gradient(135deg, #e3f2e3 0%, #ffffff 100%); 
 }
 .card-accompagner h2 {
-    color: #2f6b2f; /* vert profond, stable */
+    color: #2f6b2f; 
 }
 .card-reconstruire {
-    background: linear-gradient(135deg, #e2e8f0 0%, #ffffff 100%); /* bleu-gris clair */
+    background: linear-gradient(135deg, #e2e8f0 0%, #ffffff 100%); 
 }
 .card-reconstruire h2 {
-    color: #1e3a8a; /* bleu institutionnel */
+    color: #1e3a8a; 
 }
 
-/*--------------------- partie responsive--------------------*/
 @media (max-width: 768px) {
     .mission_section {
         padding: 150px 20px;
@@ -190,7 +182,7 @@ body {
 
     .mission_section .title p {
         font-size: 18px;
-        height: auto; /* évite les espaces trop grands */
+        height: auto; 
     }
 
     .content_box {
@@ -201,7 +193,7 @@ body {
     .sous-titre h2 {
         font-size: 30px;
     }
-    /* Cartes : une sous l’autre */
+    
     .card {
         position: relative;
         width: 90%;
@@ -213,10 +205,6 @@ body {
         height: 100%;
     }
 }
-/*-------------------Fin responsive ---------------------*/
-/*------------------------------------------------------*/
-
-
 
 .content-section {
     align-items: center;
@@ -293,14 +281,6 @@ body {
     opacity: 0.95;
 }
 
-
-
-/*------------------2em partie de la page-----------------
----------------CONGREGATION---------------------------
- */
-
-
-/* Section 1: Action Sociale */
 .action-sociale {
     background-color: white;
     border-radius: 15px;
@@ -325,7 +305,7 @@ body {
     line-height: 1.8;
 }
 
-.highlight { /* mise en avant de l'intro */
+.highlight { 
     color: #e53e3e;
     font-weight: 700;
 }
@@ -360,9 +340,8 @@ body {
 
 }
 
-/* Section 2: Heritage Protestant */
 .heritage {
-    background-image: url("../assets/image/mission/eglise1.jpg");
+    background-image: url("/assets/image/mission/eglise1.jpg");
     border-radius: 15px;
     padding: 40px;
     margin-bottom: 30px;
@@ -387,10 +366,10 @@ body {
     padding: 30px;
     margin-left: 110px;
     border-radius: 12px;
-    backdrop-filter: blur(10px); /* floute le fond */
-    /*position: relative;         /* Position absolue pour placer les cartes librement */
+    backdrop-filter: blur(10px); 
+    
     width: 320px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);     /* Ombre légère */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);     
     gap: 20px;
     -moz-box-align: center ;
 
@@ -424,8 +403,6 @@ body {
     letter-spacing: 0.5px;
 }
 
-
-/* Section 3: Statistics */
 .statistics {
     display: grid;
     grid-template-columns: 200px 1fr 1fr;
@@ -447,29 +424,6 @@ body {
     width: 200px;
     margin-left: 0;
 }
-/*
-.stat-number {
-    font-size: 48px;
-    font-weight: 700;
-    color: #c0392b;
-    margin-bottom: 10px;
-}
-
-.stat-label {
-    font-size: 15px;
-    font-weight: 700;
-    color: #2d3748;
-    margin-bottom: 8px;
-    line-height: 1.3;
-}
-
-.stat-desc {
-    font-size: 13px;
-    color: #5a6c7d;
-    line-height: 1.4;
-}
-*/
-
 
 .content-box {
     background-color: white;
@@ -492,8 +446,6 @@ body {
     text-align: justify;
 }
 
-
-/* Responsive Design */
 @media (max-width: 968px) {
     .two-columns {
         grid-template-columns: 1fr;
@@ -509,7 +461,6 @@ body {
         gap: 25px;
 
     }
-
 
     .heritage-center {
         width: 100px;

@@ -1,23 +1,5 @@
-<!DOCTYPE html>
-
-<html lang="fr">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Armée du salut : Organisation humanitaire</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" href="../assets/image/logo.png">
-    <link rel="stylesheet" href="../assets/pages.css">
-    <link rel="stylesheet" href="../assets/navbar.css">
-    <link rel="stylesheet" href="../assets/footer.css">
-</head>
-
-<body>
-
-<div id="header"></div>
-
-
+<?php
+?>
 <main>
     <section class="Dons-section">
         <div class="section-content">
@@ -29,7 +11,7 @@
                     Votre don nous permet d'agir chaque jour <br> auprès des personnes en difficultés.</h3>
             </div>
             <div class="image-Don">
-                <img src="../assets/image/image-Don.png" alt="">
+                <img src="/assets/image/image-Don.png" alt="">
             </div>
         </div>
 
@@ -47,10 +29,3 @@
     </section>
 
 </main>
-
-
-
-<div id="footer"></div>
-
-<script src="../assets/js/include.js"></script>
-</body>
