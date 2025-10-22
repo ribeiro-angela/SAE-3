@@ -2,11 +2,17 @@
 ?>
 <!-- HERO -->
 <section class="hero-histoire">
+    <div class="overlay"></div>
     <div class="hero-content">
         <h1>Notre Histoire</h1>
-        <p class="hero-subtitle">Plus de 140 ans d'engagement au service des plus démunis</p>
+        <p>140 ans d’espoir, de foi et d’action<br>au service des plus démunis</p>
+        <div class="hero-buttons">
+            <a href="#timeline" class="btn-red">Découvrir</a>
+            <a href="#missions" class="btn-outline">Notre évolution</a>
+        </div>
     </div>
 </section>
+
 
 <!-- NAVIGATION ANNÉES -->
 <nav class="annees-nav">

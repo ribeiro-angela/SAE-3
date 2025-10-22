@@ -24,34 +24,31 @@ body {
 
 .hero-histoire {
     position: relative;
-    height: 60vh;
+    height: 85vh;
+    background: url('../image/soupedenuit1925.jpg') center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: white;
+    text-align: center;
     overflow: hidden;
 }
 
+.hero-histoire .overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0.6), rgba(0,0,0,0.3));
+    z-index: 1;
+}
+
+/* Contenu */
 .hero-content {
-    text-align: center;
-    color: white;
+    position: relative;
     z-index: 2;
-    max-width: 800px;
-    padding: 0 20px;
+    max-width: 900px;
+    padding: 0 30px;
+    animation: fadeInUp 1.2s ease forwards;
 }
-
-.hero-histoire h1 {
-    font-size: 4rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-}
-
-.hero-subtitle {
-    font-size: 1.3rem;
-    opacity: 0.95;
-    font-weight: 300;
-}
-
 .annees-nav {
     background: white;
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
