@@ -1,4 +1,6 @@
 <?php
+include '../components/header.php';
+
 ?>
 <!-- HERO -->
 <section class="hero-histoire">
