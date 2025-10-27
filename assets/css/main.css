@@ -1238,7 +1238,7 @@ footer a {
 
 .footer-newsletter {
     background: linear-gradient(135deg, var(--darkRed-color), #8b1e1e);
-    padding: 4rem 0;
+    padding: 1rem 0;
     position: relative;
     overflow: hidden;
 }
