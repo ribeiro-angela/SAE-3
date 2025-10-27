@@ -1,20 +1,19 @@
 <?php
 include '../components/header.php';
-
 ?>
-<!-- HERO -->
-<section class="hero-histoire">
-    <div class="overlay"></div>
+
+<!-- HERO SECTION -->
+<section class="hero">
+    <div class="hero-overlay"></div>
     <div class="hero-content">
-        <h1>Notre Histoire</h1>
-        <p>140 ans d’espoir, de foi et d’action<br>au service des plus démunis</p>
+        <h1 class="hero-title">Notre Histoire</h1>
+        <p class="hero-subtitle">140 ans d’espoir, de foi et d’action<br>au service des plus démunis</p>
         <div class="hero-buttons">
-            <a href="#timeline" class="btn-red">Découvrir</a>
-            <a href="#missions" class="btn-outline">Notre évolution</a>
+            <a href="#timeline" class="cta-button">Découvrir</a>
+            <a href="#missions" class="cta-button secondary">Notre évolution</a>
         </div>
     </div>
 </section>
-
 
 <!-- NAVIGATION ANNÉES -->
 <nav class="annees-nav">
@@ -36,7 +35,7 @@ include '../components/header.php';
             <div class="carte-histoire">
                 <div class="annee-stamp">1878</div>
                 <span class="categorie-tag">Fondation</span>
-                <h3>L'Armée du Salut voit le jour à Londres</h3>
+                <h3 class="card-title">L'Armée du Salut voit le jour à Londres</h3>
                 <p>En pleine révolution industrielle, le pasteur William Booth est choqué par les conditions de vie indignes du monde ouvrier, notamment dans l'Est de Londres. Il crée en 1865 ce qui deviendra en 1878 l'Armée du Salut pour répondre aux besoins matériels et spirituels des plus démunis.</p>
                 <p>Le pasteur, en quête d'efficacité, s'inspire du modèle militaire pour structurer une « armée » afin de répondre aux besoins élémentaires tant matériels que spirituels.</p>
 
@@ -61,7 +60,7 @@ include '../components/header.php';
             <div class="carte-histoire">
                 <div class="annee-stamp">1881</div>
                 <span class="categorie-tag">Expansion</span>
-                <h3>Implantation en France</h3>
+                <h3 class="card-title">Implantation en France</h3>
                 <p>Seize ans plus tard, une femme franchit la Manche pour porter la mission de l'Armée du Salut en France. Catherine Booth veut "sauver les âmes et secourir les êtres". Avec l'aide des jeunes officières qui l'accompagnent, elle va réussir sa mission et faire ainsi de la France le premier pays d'Europe où l'Armée du Salut s'implante.</p>
                 <div class="personnage-card">
                     <div class="personnage-inner">
@@ -80,7 +79,7 @@ include '../components/header.php';
             <div class="carte-histoire">
                 <div class="annee-stamp">1914</div>
                 <span class="categorie-tag">Action humanitaire</span>
-                <h3>Les "Foyers du soldat"</h3>
+                <h3 class="card-title">Les "Foyers du soldat"</h3>
                 <p>Entre 1914 et 1918, l'Armée du Salut crée des "Foyers du soldat" pour venir en aide aux soldats, aux veuves et aux orphelins de la Première Guerre mondiale, ses actions lui permettront d'être reconnue et appréciée en France.</p>
 
                 <div class="photos-collage">
@@ -100,31 +99,23 @@ include '../components/header.php';
 
         <!-- STATS -->
         <div class="stats-vintage">
-            <h3>L'Armée du Salut en chiffres</h3>
-            <div class="row g-4">
-                <div class="col-md-3 col-6">
-                    <div class="stat-card">
-                        <span class="stat-nombre">1714</span>
-                        <span class="stat-label">Personnes mobilisées</span>
-                    </div>
+            <h3 class="stats-title">L'Armée du Salut en chiffres</h3>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-nombre">1714</span>
+                    <span class="stat-label">Personnes mobilisées</span>
                 </div>
-                <div class="col-md-3 col-6">
-                    <div class="stat-card">
-                        <span class="stat-nombre">134</span>
-                        <span class="stat-label">Pays d'intervention</span>
-                    </div>
+                <div class="stat-card">
+                    <span class="stat-nombre">134</span>
+                    <span class="stat-label">Pays d'intervention</span>
                 </div>
-                <div class="col-md-3 col-6">
-                    <div class="stat-card">
-                        <span class="stat-nombre">2800</span>
-                        <span class="stat-label">Salariés en France</span>
-                    </div>
+                <div class="stat-card">
+                    <span class="stat-nombre">2800</span>
+                    <span class="stat-label">Salariés en France</span>
                 </div>
-                <div class="col-md-3 col-6">
-                    <div class="stat-card">
-                        <span class="stat-nombre">240</span>
-                        <span class="stat-label">Établissements</span>
-                    </div>
+                <div class="stat-card">
+                    <span class="stat-nombre">240</span>
+                    <span class="stat-label">Établissements</span>
                 </div>
             </div>
         </div>
@@ -134,7 +125,7 @@ include '../components/header.php';
             <div class="carte-histoire">
                 <div class="annee-stamp">1920</div>
                 <span class="categorie-tag">Développement</span>
-                <h3>Construction des grands établissements</h3>
+                <h3 class="card-title">Construction des grands établissements</h3>
                 <p>Dans les deux décennies qui suivent la Grande Guerre, l'oeuvre de l'Armée du Salut se développe notamment sous l'impulsion du couple Albin et Blanche Peyron. Des années 1920 aux années 1930, plusieurs grands établissements de l'Armée du Salut sont construits comme le Palais de la Femme, la Cité de Refuge, Le Palais du Peuple, la Résidence Catherine Booth.</p>
                 <p>En 1931, l'Association des Oeuvres Françaises de Bienfaisance de l'Armée du Salut (AOFBAS), reconnue d'utilité publique, est créée ce qui permet à l'Armée du Salut de recevoir des dons et legs et de les affecter aux projets en cours. La même année, les premières Soupes de nuit sont distribuées dans les rues de Paris.</p>
 
@@ -149,12 +140,12 @@ include '../components/header.php';
             <div class="carte-histoire">
                 <div class="annee-stamp">2000</div>
                 <span class="categorie-tag">Modernisation</span>
-                <h3>Création de la Fondation de l'Armée du Salut</h3>
+                <h3 class="card-title">Création de la Fondation de l'Armée du Salut</h3>
                 <p>Cette association est remplacée par la Fondation de l'Armée du Salut reconnue d'utilité publique, en 2000 (décret du 11 avril 2000). La Fondation intervient essentiellement dans la prévention de la violence auprès des jeunes et l'éducation, la réinsertion de femmes et d'hommes et de familles en situation d'exclusion, l'insertion professionnelle des personnes handicapées et déficientes mentales ou encore l'accompagnement des personnes âgées dépendantes. Sa devise : Secourir, Accompagner, Reconstruire.</p>
                 <p>La Fondation emploie 2 800 salariés et compte plus de 240 établissements et services d'action sociale en France. Elle est habilitée à recevoir legs et donations et fonctionne aussi grâce à ses donateurs et testateurs.</p>
 
                 <div class="actions-box">
-                    <h4>Nos actions aujourd'hui</h4>
+                    <h4 class="actions-title">Nos actions aujourd'hui</h4>
                     <ul>
                         <li>Accueil d'urgence et hébergement</li>
                         <li>Aide alimentaire</li>
@@ -170,9 +161,9 @@ include '../components/header.php';
 
 <section class="cta-vintage">
     <div class="container">
-        <h3>L'histoire continue avec vous</h3>
-        <p>Rejoignez les milliers de personnes qui soutiennent notre action depuis plus d'un siècle</p>
-        <a href="#" class="btn-vintage">Faire un don</a>
-        <a href="#" class="btn-vintage outline">Devenir bénévole</a>
+        <h3 class="cta-title">L'histoire continue avec vous</h3>
+        <p class="cta-subtitle">Rejoignez les milliers de personnes qui soutiennent notre action depuis plus d'un siècle</p>
+        <a href="#" class="cta-button">Faire un don</a>
+        <a href="#" class="cta-button secondary">Devenir bénévole</a>
     </div>
 </section>

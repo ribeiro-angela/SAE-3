@@ -385,379 +385,144 @@ a.don:hover {
 }
 
 /* ========== SECTION SLOGAN/HERO ========== */
-.hero-histoire {
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    font-weight: 400;
+    --primary-red: #a94442;
+    --dark-blue: #1e3a5f;
+    --light-bg: #f5f5f5;
+    --white: #ffffff;
+    --text-dark: #333333;
+    --text-light: #666666;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-color: var(--light-bg);
+    color: var(--text-dark);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+/* Hero Section */
+.hero {
     position: relative;
-    height: 85vh;
-    background: url('../image/soupedenuit1925.jpg') center/cover no-repeat;
+    height: 500px;
+    background-image: url('../image/soupedenuit1925.jpg');
+    background-size: cover;
+    background-position: center;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
-    text-align: center;
     overflow: hidden;
 }
 
-.hero-histoire .overlay {
+.hero-overlay {
     position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, rgba(0,0,0,0.6), rgba(0,0,0,0.3));
-    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
 }
 
-/* Contenu */
 .hero-content {
     position: relative;
     z-index: 2;
-    max-width: 900px;
-    padding: 0 30px;
-    animation: fadeInUp 1.2s ease forwards;
+    text-align: center;
+    color: var(--white);
+    padding: 20px;
 }
 
-/* === TITRES === */
-.hero-content h1 {
-    font-size: 4.8rem; /* ++ Agrandi */
-    font-weight: 800;
-    margin-bottom: 25px;
-    letter-spacing: -1.5px;
-    color: #fff;
-    text-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
-}
-
-.hero-content p {
-    font-size: 1.6rem; /* ++ Agrandi */
+.hero-title {
+    font-size: 3.5rem;
     font-weight: 400;
-    margin-bottom: 60px; /* ++ Plus d’espace avec les boutons */
-    color: rgba(255, 255, 255, 0.95);
-    line-height: 1.6;
-    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    animation: fadeInDown 1s ease-out;
 }
 
-/* === BOUTONS === */
+.hero-subtitle {
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    animation: fadeInDown 1s ease-out 0.2s both;
+}
+
 .hero-buttons {
     display: flex;
-    gap: 40px;
     justify-content: center;
-    flex-wrap: wrap;
+    gap: 20px;
 }
 
-.btn-red {
-    background: #b7443e;
-    color: white;
-    padding: 16px 42px; /* ++ un peu plus large */
-    border-radius: 40px;
-    font-weight: 600;
+.cta-button {
+    background-color: var(--primary-red);
+    color: var(--white);
+    border: none;
+    padding: 18px 50px;
     font-size: 1.1rem;
-    text-decoration: none;
-    transition: 0.3s;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-}
-
-.btn-red:hover {
-    background: #a03b36;
-    transform: translateY(-2px);
-}
-
-.btn-outline {
-    border: 2px solid #fff;
-    color: #fff;
-    padding: 14px 40px;
-    border-radius: 40px;
     font-weight: 600;
-    font-size: 1.1rem;
-    text-decoration: none;
-    transition: 0.3s;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    animation: fadeInUp 1s ease-out 0.4s both;
+    box-shadow: 0 4px 15px rgba(169, 68, 66, 0.4);
 }
 
-.btn-outline:hover {
-    background: #fff;
-    color: #b7443e;
-    transform: translateY(-2px);
+.cta-button:hover {
+    background-color: #8b3735;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(169, 68, 66, 0.6);
 }
 
-
-
-
-
-.section-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    max-width: 1400px;
-    margin: 0 auto;
-    width: 100%;
-    gap: 80px;
+.cta-button.secondary {
+    background: transparent;
+    border: 2px solid var(--white);
 }
 
-.slogan-details {
-    flex: 1;
-    color: var(--white-color);
-    max-width: 550px;
+.cta-button.secondary:hover {
+    background: var(--white);
+    color: var(--primary-red);
 }
 
-.slogan-details .title {
-    font-size: 68px;
-    font-weight: 700;
-    margin-bottom: 25px;
-    line-height: 1.1;
-    letter-spacing: -1px;
-}
-
-.slogan-details .subtitle {
-    font-size: 18px;
-    font-weight: 400;
-    margin: 30px 0 50px;
-    line-height: 1.6;
-    opacity: 0.95;
-}
-
-.image-slogan {
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
-
-.image-slogan img {
-    width: 100%;
-    max-width: 450px;
-    height: 550px;
-    object-fit: cover;
-    border-radius: 12px;
-    filter: grayscale(20%) blur(0.5px);
-    opacity: 0.85;
-}
-
-/* ========== SECTION ASSOCIATION ========== */
-.section-association {
-    background-color: var(--white-color);
-    padding: 100px 80px;
-}
-
-.section-association h2 {
-    font-size: 48px;
-    font-weight: 700;
-    margin-bottom: 70px;
-    color: var(--primary-color);
-    text-align: center;
-}
-
-.sous-association {
-    display: flex;
-    align-items: flex-start;
-    gap: 80px;
-}
-
-.association-text {
-    flex: 1;
-    font-size: 16px;
-    line-height: 1.9;
-    padding-right: 30px;
-}
-
-.association-text p {
-    color: var(--primary-color);
-}
-
-.association-images {
-    flex: 1;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 400px;
-}
-
-.association-image {
-    position: absolute;
-    width: 200px;
-    height: 250px;
-    object-fit: cover;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    transition: var(--transition);
-    border: 6px solid white;
-}
-
-.association-image:nth-child(1) {
-    transform: rotate(-12deg);
-    top: 0;
-    left: 20px;
-    z-index: 3;
-}
-
-.association-image:nth-child(2) {
-    transform: rotate(8deg);
-    top: 80px;
-    right: 0;
-    z-index: 2;
-}
-
-.association-image:nth-child(3) {
-    transform: rotate(-5deg);
-    bottom: 0;
-    left: 80px;
-    z-index: 1;
-}
-
-.association-image:hover {
-    transform: rotate(0deg) scale(1.05);
-    z-index: 10;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-}
-
-/* ========== SECTION REJOINDRE ========== */
-.section-rejoindre {
-    background: var(--light-bg);
-    padding: 100px 80px;
-}
-
-.section-rejoindre h2 {
-    font-size: 48px;
-    font-weight: 700;
-    margin-bottom: 60px;
-    color: var(--primary-color);
-    text-align: center;
-}
-
-.rejoindre-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.rejoindre-card {
-    background: var(--white-color);
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: var(--shadow-md);
-    transition: var(--transition);
-}
-
-.rejoindre-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-lg);
-}
-
-.rejoindre-card-image {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
-
-.rejoindre-card-content {
-    padding: 25px;
-}
-
-.rejoindre-card-content h3 {
-    font-size: 22px;
-    color: var(--primary-color);
-    margin-bottom: 15px;
-}
-
-.rejoindre-card-content p {
-    font-size: 15px;
-    line-height: 1.6;
-    color: var(--text-light);
-}
-
-/* ========== SECTION TÉMOIGNAGES ========== */
-.section-temoignages {
-    background: var(--dark-bg);
-    padding: 100px 80px;
-}
-
-.section-temoignages h2 {
-    font-size: 48px;
-    font-weight: 700;
-    margin-bottom: 60px;
-    color: var(--white-color);
-    text-align: center;
-}
-
-.temoignage-container {
-    display: flex;
-    align-items: center;
-    gap: 60px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.temoignage-image {
-    flex: 0 0 400px;
-}
-
-.temoignage-image img {
-    width: 100%;
-    height: 450px;
-    object-fit: cover;
-    border-radius: 8px;
-    filter: grayscale(30%);
-}
-
-.temoignage-card {
-    flex: 1;
-    color: var(--white-color);
-}
-
-.quote-mark {
-    color: var(--darkRed-color);
-    font-size: 120px;
-    line-height: 0.8;
-    font-family: Georgia, serif;
-    margin-bottom: 20px;
-    display: block;
-}
-
-.temoignage-text {
-    font-size: 20px;
-    line-height: 1.7;
-    margin-bottom: 30px;
-    font-style: italic;
-}
-
-.temoignage-author {
-    padding-top: 20px;
-}
-
-.temoignage-author strong {
-    display: block;
-    font-size: 18px;
-    margin-bottom: 5px;
-    font-weight: 600;
-}
-
-.temoignage-author span {
-    font-size: 14px;
-    opacity: 0.8;
-    font-style: italic;
-}
-
-/* ========== HISTOIRE - TIMELINE ========== */
+/* Navigation Années */
 .annees-nav {
-    background: white;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    background: var(--white);
+    box-shadow: 0 2px 15px rgba(0,0,0,0.08);
     position: sticky;
     top: 0;
     z-index: 100;
-    border-bottom: 3px solid var(--darkRed-color);
+    border-bottom: 3px solid var(--primary-red);
 }
 
 .annees-nav .container {
     display: flex;
     justify-content: center;
-    gap: 10px;
+    gap: 15px;
     flex-wrap: wrap;
     padding: 20px;
 }
 
 .annee-tab {
     padding: 12px 28px;
-    background: white;
-    border: 2px solid var(--darkRed-color);
+    background: var(--white);
+    border: 2px solid var(--primary-red);
     border-radius: 30px;
-    color: var(--darkRed-color);
+    color: var(--primary-red);
     font-weight: 600;
     font-size: 0.95rem;
     text-decoration: none;
@@ -766,13 +531,14 @@ a.don:hover {
 }
 
 .annee-tab:hover {
-    background: var(--darkRed-color);
-    color: white;
+    background: var(--primary-red);
+    color: var(--white);
 }
 
+/* Timeline Wrapper */
 .timeline-wrapper {
     padding: 80px 20px;
-    background: var(--cream);
+    background: var(--light-bg);
     position: relative;
 }
 
@@ -783,7 +549,7 @@ a.don:hover {
     top: 0;
     bottom: 0;
     width: 4px;
-    background: linear-gradient(to bottom, var(--darkRed-color), var(--gold-color));
+    background: linear-gradient(to bottom, var(--primary-red), var(--dark-blue));
     transform: translateX(-50%);
 }
 
@@ -794,12 +560,21 @@ a.don:hover {
 
 .carte-histoire {
     position: relative;
-    background: white;
+    background: var(--white);
     padding: 50px;
     max-width: 900px;
     margin: 0 auto;
-    border-radius: 12px;
+    border-radius: 15px;
     box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    animation: fadeInUp 1s ease-out;
+}
+
+.card-title {
+    font-size: 2rem;
+    color: var(--primary-red);
+    margin-bottom: 20px;
+    font-weight: 700;
+    line-height: 1.3;
 }
 
 .annee-stamp {
@@ -811,20 +586,20 @@ a.don:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, var(--darkRed-color), var(--dark-red-hover));
-    color: white;
+    background: linear-gradient(135deg, var(--primary-red), #8b3735);
+    color: var(--white);
     font-size: 1.8rem;
     font-weight: 700;
     border-radius: 50%;
-    border: 5px solid white;
-    box-shadow: 0 8px 25px rgba(193, 58, 58, 0.4);
+    border: 5px solid var(--white);
+    box-shadow: 0 8px 25px rgba(67, 21, 21, 0.4);
     z-index: 10;
 }
 
 .categorie-tag {
     display: inline-block;
-    background: var(--gold-color);
-    color: white;
+    background: var(--dark-blue);
+    color: var(--white);
     padding: 8px 20px;
     font-size: 0.75rem;
     font-weight: 700;
@@ -834,41 +609,26 @@ a.don:hover {
     border-radius: 20px;
 }
 
-.carte-histoire h3 {
-    font-size: 2rem;
-    color: var(--darkRed-color);
-    margin-bottom: 20px;
-    font-weight: 700;
-    line-height: 1.3;
-}
-
-.carte-histoire p {
-    font-size: 1.05rem;
-    color: var(--text-dark);
-    margin-bottom: 20px;
-    line-height: 1.8;
-}
-
 .citation-manuscrite {
-    background: linear-gradient(135deg, var(--cream) 0%, white 100%);
-    border-left: 5px solid var(--darkRed-color);
+    background: linear-gradient(135deg, var(--light-bg) 0%, var(--white) 100%);
+    border-left: 5px solid var(--primary-red);
     padding: 30px 40px;
     margin: 30px 0;
     font-size: 1.3rem;
     font-style: italic;
-    color: var(--darkRed-color);
+    color: var(--primary-red);
     position: relative;
     border-radius: 8px;
 }
 
 .personnage-card {
-    background: white;
+    background: var(--white);
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 6px 20px rgba(0,0,0,0.1);
     margin-top: 30px;
     display: inline-flex;
-    border: 2px solid var(--cream);
+    border: 2px solid var(--light-bg);
 }
 
 .personnage-inner {
@@ -882,13 +642,13 @@ a.don:hover {
     height: 90px;
     object-fit: cover;
     border-radius: 50%;
-    border: 3px solid var(--darkRed-color);
+    border: 3px solid var(--primary-red);
 }
 
 .personnage-info strong {
     display: block;
     font-size: 1.2rem;
-    color: var(--darkRed-color);
+    color: var(--primary-red);
     margin-bottom: 5px;
     font-weight: 600;
 }
@@ -917,19 +677,20 @@ a.don:hover {
     object-fit: cover;
 }
 
+/* Stats Section */
 .stats-vintage {
-    background: linear-gradient(135deg, var(--darkRed-color) 0%, var(--dark-red-hover) 100%);
+    background: linear-gradient(135deg, var(--primary-red) 0%, #8b3735 100%);
     padding: 70px 40px;
     margin: 80px auto;
     max-width: 1100px;
     border-radius: 20px;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 15px 50px rgba(193, 58, 58, 0.3);
+    box-shadow: 0 15px 50px rgba(169, 68, 66, 0.3);
 }
 
-.stats-vintage h3 {
-    color: white;
+.stats-title {
+    color: var(--white);
     font-size: 2.5rem;
     text-align: center;
     margin-bottom: 50px;
@@ -938,17 +699,54 @@ a.don:hover {
     z-index: 2;
 }
 
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+}
+
+.stat-card {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--white);
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 15px 40px rgba(169, 68, 66, 0.4);
+}
+
+.stat-nombre {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.stat-label {
+    font-size: 1.1rem;
+    opacity: 0.95;
+    font-weight: 500;
+}
+
+/* Actions Box */
 .actions-box {
-    background: linear-gradient(135deg, var(--cream) 0%, white 100%);
-    border: 3px solid var(--darkRed-color);
+    background: linear-gradient(135deg, var(--light-bg) 0%, var(--white) 100%);
+    border: 3px solid var(--primary-red);
     padding: 35px;
     border-radius: 15px;
     margin-top: 30px;
     box-shadow: 0 6px 20px rgba(0,0,0,0.08);
 }
 
-.actions-box h4 {
-    color: var(--darkRed-color);
+.actions-title {
+    color: var(--primary-red);
     margin-bottom: 20px;
     font-size: 1.6rem;
     font-weight: 700;
@@ -972,35 +770,75 @@ a.don:hover {
     position: absolute;
     left: 0;
     top: 12px;
-    color: var(--darkRed-color);
+    color: var(--primary-red);
     font-weight: bold;
     font-size: 1.3rem;
 }
 
+/* CTA Section */
 .cta-vintage {
-    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--darkRed-color) 100%);
+    background: linear-gradient(135deg, var(--dark-blue) 0%, var(--primary-red) 100%);
     padding: 80px 20px;
     text-align: center;
     position: relative;
     overflow: hidden;
 }
 
-.cta-vintage h3 {
+.cta-title {
     font-size: 3rem;
-    color: white;
+    color: var(--white);
     margin-bottom: 20px;
     font-weight: 700;
     position: relative;
     z-index: 2;
 }
 
-.cta-vintage p {
+.cta-subtitle {
     color: rgba(255, 255, 255, 0.95);
     font-size: 1.2rem;
     margin-bottom: 40px;
     position: relative;
     z-index: 2;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* ========== MISSIONS ========== */
 .mission_section {
