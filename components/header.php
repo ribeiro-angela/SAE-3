@@ -55,11 +55,11 @@
                 <div class="nav-item dropdown">
                     <a href="/pages/don.php" class="nav-link">Nous soutenir</a>
                     <div class="dropdown-menu">
-                        <a href="accueil.php" class="nav-link active">Accueil</a>
-                        <a href="nos-missions.php" class="nav-link">Nos Missions</a>
-                        <a href="histoire.php" class="dropdown-link">Notre histoire</a>
-                        <a href="don.php" class="dropdown-link">Faire un don</a>
-                        <a href="rejoindre.php" class="dropdown-link">Devenir bénévole</a>
+                        <a href="/pages/accueil.php" class="nav-link active">Accueil</a>
+                        <a href="../pages/nos-missions.php" class="nav-link">Nos Missions</a>
+                        <a href="../pages/histoire.php" class="dropdown-link">Notre histoire</a>
+                        <a href="../pages/don.php" class="dropdown-link">Faire un don</a>
+                        <a href="../pages/rejoindre.php" class="dropdown-link">Devenir bénévole</a>
                     </div>
                 </div>
             </div>

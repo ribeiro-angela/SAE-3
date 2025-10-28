@@ -1,5 +1,5 @@
 <?php
-include '../components/header.php';
+include_once '../components/header.php'
 ?>
 
 <!-- HERO SECTION -->
@@ -160,3 +160,7 @@ include '../components/header.php';
         <a href="#" class="cta-button secondary">Devenir bénévole</a>
     </div>
 </section>
+
+<?php
+include_once '../components/footer.php'
+?>
