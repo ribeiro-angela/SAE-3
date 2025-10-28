@@ -1,4 +1,5 @@
 <?php
+include_once '../components/header.php'
 ?>
 <main>
     <!-- SECTION HERO -->
@@ -89,3 +90,7 @@
         </div>
     </section>
 </main>
+
+<?php
+include_once '../components/footer.php'
+?>

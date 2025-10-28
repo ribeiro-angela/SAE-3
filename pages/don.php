@@ -1,4 +1,5 @@
 <?php
+include_once '../components/header.php'
 ?>
 <main>
     <section class="Dons-section">
@@ -29,3 +30,7 @@
     </section>
 
 </main>
+
+<?php
+include_once '../components/footer.php'
+?>

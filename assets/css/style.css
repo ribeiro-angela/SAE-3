@@ -46,10 +46,6 @@ body {
     padding: 0 2rem;
 }
 
-.section-padding {
-    padding: 100px 80px;
-}
-
 section {
     padding: 60px 0;
 }
@@ -84,7 +80,7 @@ header.scrolled {
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
 }
 
-.navbar, .navbar-custom {
+.navbar {
     padding: 0;
 }
 
@@ -239,17 +235,6 @@ header.scrolled {
 }
 
 /* ========== BOUTONS ========== */
-.btn {
-    padding: 12px 24px;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: 500;
-    transition: var(--transition);
-    display: inline-block;
-    cursor: pointer;
-    border: 2px solid transparent;
-    text-align: center;
-}
 
 .btn-donate {
     background: linear-gradient(135deg, var(--accent-color), var(--darkRed-color));
@@ -272,30 +257,6 @@ header.scrolled {
     filter: brightness(.95);
 }
 
-.btn-primary {
-    background: var(--accent-red);
-    color: var(--white-color);
-    border-color: var(--accent-red);
-}
-
-.btn-primary:hover {
-    background: var(--dark-red-hover);
-    border-color: var(--dark-red-hover);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(139, 30, 30, 0.3);
-}
-
-.btn-secondary {
-    background: transparent;
-    color: var(--white-color);
-    border-color: var(--white-color);
-}
-
-.btn-secondary:hover {
-    background: var(--white-color);
-    color: var(--primary-color);
-    transform: translateY(-2px);
-}
 
 .btn-outline {
     background: transparent;
@@ -1386,7 +1347,7 @@ a.don:hover {
 }
 
 /* ========== FOOTER ========== */
-.site-footer, footer {
+footer {
     background: var(--primary-color);
     color: var(--white-color);
     margin-top: 4rem;

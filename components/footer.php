@@ -21,8 +21,8 @@
                     <img src="/assets/image/logo.png" alt="Logo Armée du Salut" class="footer-logo">
                     <p class="footer-mission">Depuis 1881, l'Armée du Salut vient en aide aux plus démunis avec compassion et détermination.</p>
                     <div class="footer-actions">
-                        <a href="Don.html" class="footer-btn">Faire un don</a>
-                        <a href="Rejoindre.html" class="footer-btn secondary">Devenir bénévole</a>
+                        <a href="../pages/don.php" class="footer-btn">Faire un don</a>
+                        <a href="../pages/rejoindre.php" class="footer-btn secondary">Devenir bénévole</a>
                     </div>
                 </div>
 

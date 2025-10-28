@@ -1,6 +1,5 @@
 <?php
-include '../components/header.php';
-
+include_once '../components/header.php';
 ?>
 <!-- HERO -->
 <section class="hero-histoire">
@@ -176,3 +175,7 @@ include '../components/header.php';
         <a href="#" class="btn-vintage outline">Devenir bénévole</a>
     </div>
 </section>
+
+<?php
+include_once '../components/footer.php'
+?>
