@@ -8,10 +8,6 @@ include '../components/header.php';
     <div class="hero-content">
         <h1 class="hero-title">Notre Histoire</h1>
         <p class="hero-subtitle">140 ans d’espoir, de foi et d’action<br>au service des plus démunis</p>
-        <div class="hero-buttons">
-            <a href="#timeline" class="cta-button">Découvrir</a>
-            <a href="#missions" class="cta-button secondary">Notre évolution</a>
-        </div>
     </div>
 </section>
 
@@ -39,9 +35,6 @@ include '../components/header.php';
                 <p>En pleine révolution industrielle, le pasteur William Booth est choqué par les conditions de vie indignes du monde ouvrier, notamment dans l'Est de Londres. Il crée en 1865 ce qui deviendra en 1878 l'Armée du Salut pour répondre aux besoins matériels et spirituels des plus démunis.</p>
                 <p>Le pasteur, en quête d'efficacité, s'inspire du modèle militaire pour structurer une « armée » afin de répondre aux besoins élémentaires tant matériels que spirituels.</p>
 
-                <div class="citation-manuscrite">
-                    Soup, Soap, Salvation !
-                </div>
 
                 <div class="personnage-card">
                     <div class="personnage-inner">
