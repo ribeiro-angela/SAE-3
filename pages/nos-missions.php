@@ -5,25 +5,25 @@ include_once '../components/header.php'
 
 <main>
     <section class="mission_section">
-
         <div class="title">
             <h1> NOTRE MISSION <br></h1>
             <p> Prendre soin des personnes dans le besoin</p>
         </div>
 
+         <div class="highlight-paragraph">
+                <p>
+                    Prendre soin des personnes est le centre de la démarche de <span style ="color:blue;">la Congrégation</span> et de <span style ="color:blue;">la Fondation de l’Armée du Salut </span>.
+                    <br> Les deux entités accueillent, soutiennent, et accompagnent les femmes et les hommes de toute origine et condition sans distinction aucune.
+                </p>
 
+        </div>
 
-        <div class ="mission_content">
+        <section class ="mission_types">
             <div class="content_box">
-                <div class="highlight-paragraph">
-                    <p>
-                        Prendre soin des personnes est le centre de la démarche de la Congrégation et de la Fondation de l’Armée du Salut.
-                        Les deux entités accueillent, soutiennent, et accompagnent les femmes et les hommes de toute origine et condition sans distinction aucune.
-                    </p>
-                </div>
                 <div class="sous-titre">
-                    <h1> Les missions de la <br></h1>
-                    <h2> Fondation de l'Armée du Salut</h2>
+                    <h1> Les missions de la <br>
+                       <span style="color: #8b1e1e ;">Fondation de l'Armée du Salut</span>
+                    </h1>
                 </div>
 
                 <div class="first-mission">
@@ -57,6 +57,39 @@ include_once '../components/header.php'
                         </p>
                     </div>
                 </section>
+            </div>
+        </section>
+
+
+        <section class="section-precarite">
+            <div class="precarite-container">
+                <!-- Texte à gauche -->
+                <div class="precarite-texte">
+                    <h2>Notre Mission.</span></h2>
+                    <h3>
+                        Personnes isolées ou familles <br>
+                        en situation de grande <br>
+                        précarité,
+
+                    </h3>
+                    <p>
+                        personnes handicapées et/ou âgées dépendantes, enfants et adolescents 
+                        en situation de fragilité : <span style="color=rouge">ils sont des milliers à être, chaque 
+                        année, accueillis et accompagnés dans une grande variété 
+                        d'établissements,</span> en lien avec les politiques publiques élaborées 
+                        et mises en œuvre aux niveaux national et local.
+                    </p>
+                    <button class="btn-don-rouge">EN SAVOIR PLUS</button>
+                </div>
+
+                <!-- Image à droite -->
+                <div class="precarite-image">
+                    <img src="/assets/image/mission1.jpg" alt="Sans-abri">
+                </div>
+            </div>
+        </section>
+
+<!-- 
                 <div class="notre-mission">
                     <h2> Notre Mission</h2>
                     <p>
@@ -73,7 +106,7 @@ include_once '../components/header.php'
                         à un nombre croissant de structures locales.
                     </p>
                 </div>
-
+-->
                 <div class="content-section">
                     <h2>La Fondation en Chiffres</h2>
                     <div class="stats-grid">
@@ -104,30 +137,64 @@ include_once '../components/header.php'
                     </div>
                 </div>
 
-
-
-
-
                 <div class="sous-titre">
-                    <h1> Les missions de la <br></h1>
-                    <h2> Congrégation</h2>
+                    <h1> Les missions de la <br>
+                     <span style = "color: #8b1e1e ;"> Congrégation </span>
+                    </h1>
                 </div>
+                <section class="section-precarite">
+                <div class="precarite-container">
+                    <div class="precarite-texte">
+                        <h2>Une Double Mission.</span></h2>
+                        <h3>
+                            Depuis ses origines, <br>
+                        </h3>
+                        <p>
+                            l'Armée du Salut s'adresse à la personne dans sa globalité avec une mission
+                            à la fois spirituelle et sociale. Ces deux objectifs sont complémentaires et indissociables..
+                            <br>
+                            En 1994, l'Armée du Salut s'est constituée en Congrégation pour la partie cultuelle de son action,
+                            avec aujourd'hui 25 postes d'évangélisation en France.
+                        </p>
+                        <button class="btn-don-rouge">EN SAVOIR PLUS</button>
+                    </div>
+                    <!-- Image à droite -->
+                    <div class="precarite-image">
+                        <img src="/assets/image/congregation.jpg" alt="Congrégation">
+                    </div>
+                </div>  
+                </section>
 
 
-
-                <div class="notre-mission">
-                    <h2> Une Double Mission</h2>
-                    <p>
-                        Depuis ses origines, l'Armée du Salut s'adresse à la personne dans sa globalité avec une mission
-                        à la fois spirituelle et sociale. Ces deux objectifs sont complémentaires et indissociables..
-                        <br>
-                        <br>
-                        En 1994, l'Armée du Salut s'est constituée en Congrégation pour la partie cultuelle de son action,
-                        avec aujourd'hui 25 postes d'évangélisation en France.
+                <section class="action-sociale">
+                    <h1>Action Sociale des Postes</h1>
+                    <p class="intro">
+                        L'action sociale représente près de <span class="emph-rouge">60 % du temps de travail de l'officier</span>.
+                        <br>Elle est subventionnée par la Fondation de l'Armée du Salut, en fonction des projets montés.
                     </p>
-                </div>
+                    <div class="actions-columns">
+                        <div class="actions-col col-principale">
+                        <h2>Actions Principales</h2>
+                        <ul>
+                            <li><span class="icon-dot"></span>Aide alimentaire <span class="desc">(distribution de denrées et bons)</span></li>
+                            <li><span class="icon-dot"></span>Vente et distribution de vêtements</li>
+                            <li><span class="icon-dot"></span>Accompagnement administratif</li>
+                            <li><span class="icon-dot"></span>Distribution de soupes <span class="desc">de nuit l'hiver</span></li>
+                        </ul>
+                        </div>
+                        <div class="actions-col col-specifique">
+                        <h2>Programmes Spécifiques</h2>
+                        <ul>
+                            <li><span class="icon-dot"></span>Alphabétisation <span class="desc">pour adultes</span></li>
+                            <li><span class="icon-dot"></span>Organisation de vacances <span class="desc">pour enfants</span></li>
+                            <li><span class="icon-dot"></span>Cours de musique</li>
+                            <li><span class="icon-dot"></span>Clubs vidéo et bricolage</li>
+                        </ul>
+                        </div>
+                    </div>
+                </section>
 
-                <!-- Section 1: Action Sociale -->
+                <!-- Section 1: Action Sociale 
                 <section class="action-sociale">
                     <h1>Action Sociale des Postes</h1>
                     <p class="intro">
@@ -155,13 +222,13 @@ include_once '../components/header.php'
                             </ul>
                         </div>
                     </div>
-                </section>
+                </section>-->
 
                 <!-- Section 2: Heritage Protestant -->
                 <section class="heritage">
 
                     <div class="heritage-content">
-                        <div class="heritage-left">
+                        <div class="heritage-block heritage-left">
                             <h2>Héritage Protestant</h2>
                             <p>
                                 Le Salut fait partie des églises issues de la Réformation du seizième siècle et est membre de la Fédération Protestante en France.
@@ -175,7 +242,7 @@ include_once '../components/header.php'
                             <!-- Church window decoration -->
                         </div>
 
-                        <div class="heritage-right">
+                        <div class="heritage-block heritage-right">
                             <h2>Le Concept du Salut</h2>
                             <p>
                                 Le salut signifie apporter un soin à chaque personne dans 4 dimensions :
@@ -194,33 +261,34 @@ include_once '../components/header.php'
                 </section>
 
                 <!-- Section 3: Statistics -->
-                <section class="statistics">
-                    <div class="stat-box">
-                        <div class="stat-number">52</div>
-                        <div class="stat-label">Postes Évangéliques</div>
+                <section class="statistics-row">
+                    <div class="stat-circle">
+                        <div class="stat-eglise">
+                        <span class="stat-number">52</span>
+                        <div class="stat-title">Postes évangéliques</div>
                         <div class="stat-desc">Répartis dans toute la France</div>
+                        </div>
+                        <div class="stat-benevoles">
+                        <span class="stat-number rouge">900+</span>
+                        <div class="stat-title">Bénévoles & Salariés</div>
+                        <div class="stat-desc">Au service des communautés</div>
+                        </div>
                     </div>
 
-                    <div class="content-box">
+                    <div class="stat-foi">
                         <h2>Témoignage de Foi</h2>
-                        <p>
                             Les bénévoles témoignent de l'amour de Dieu, espérant que leurs auditeurs, quelle que soit leur région, apportent une présence spirituelle paisible auprès des personnes en détresse.
                         </p>
                     </div>
 
-                    <div class="content-box">
+                    <div class="stat-solidarite">
                         <h2>Solidarité-Charité</h2>
                         <p>
                             La Congrégation développe une culture de partage et de solidarité visant à la recherche de la paix, où chacun trouve sa véritable liberté au service des autres.
                         </p>
                     </div>
                 </section>
-
-                <div class="stat-box secondary">
-                    <div class="stat-number">900+</div>
-                    <div class="stat-label">Bénévoles & Salariés</div>
-                    <div class="stat-desc">Au service des communautés</div>
-                </div>
+                
             </div>
         </div>
     </section>
@@ -270,3 +338,4 @@ include_once '../components/header.php'
 <?php
 include_once '../components/footer.php'
 ?>
+
