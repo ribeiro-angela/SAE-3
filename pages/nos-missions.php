@@ -79,7 +79,24 @@ include_once '../components/header.php'
                         d'établissements,</span> en lien avec les politiques publiques élaborées 
                         et mises en œuvre aux niveaux national et local.
                     </p>
-                    <button class="btn-don-rouge">EN SAVOIR PLUS</button>
+                    <button class="btn-don-rouge" id="btn-en-savoir-plus">
+                        <span>EN SAVOIR PLUS</span>
+                        <svg class="arrow" viewBox="0 0 24 24" width="26" height="26">
+                            <path d="M6 12h12M12 6l6 6-6 6" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round"/>
+                        </svg>
+                    </button>
+
+                    <div class="page-flip-content" id="flip-content">
+                        <div class="flip-inner">
+                            <h3>Détails sur notre mission ... </h3>
+                            <p>Qualité de l'accueil et accompagnement global (tenant compte de toutes les dimensions de la vie et du parcours
+                        de chaque personne accueillie) sont au fondement de l'action de la Fondation de l'Armée du Salut, réalisée dans
+                        la plupart des régions et de nombreux départements et grandes villes (outre Paris/région parisienne, Lyon, Marseille,
+                        Lille, Strasbourg, Rouen, Le Havre, Montpellier, Saint-Étienne, Reims, Nîmes, etc.), sans compter l'appui apporté
+                        à un nombre croissant de structures locales.</p>
+                        </div>
+                    </div>
+
                 </div>
 
                 <!-- Image à droite -->
@@ -156,7 +173,7 @@ include_once '../components/header.php'
                             En 1994, l'Armée du Salut s'est constituée en Congrégation pour la partie cultuelle de son action,
                             avec aujourd'hui 25 postes d'évangélisation en France.
                         </p>
-                        <button class="btn-don-rouge">EN SAVOIR PLUS</button>
+                        
                     </div>
                     <!-- Image à droite -->
                     <div class="precarite-image">
@@ -288,7 +305,6 @@ include_once '../components/header.php'
                         </p>
                     </div>
                 </section>
-                
             </div>
         </div>
     </section>
@@ -333,6 +349,16 @@ include_once '../components/header.php'
     if (statsSection) {
         observer.observe(statsSection);
     }
+</script>
+
+<script>
+const btn = document.getElementById("btn-en-savoir-plus");
+const content = document.getElementById("flip-content");
+
+btn.addEventListener("click", function() {
+  btn.classList.toggle("open");
+  content.classList.toggle("open");
+});
 </script>
 
 <?php
