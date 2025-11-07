@@ -1984,14 +1984,21 @@ footer a {
 
 /* === PAGE REJOINDRE === */
 
-.fade-section {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: all 0.8s ease;
+.banner {
+    position: relative;
 }
-.fade-section.visible {
-    opacity: 1;
-    transform: translateY(0);
+
+.banner-img {
+    height: 350px;
+    object-fit: cover;
+    width: 100%;
+    display: block;
+}
+
+.banner-overlay {
+    background: rgba(0, 0, 0, 0.55);
+    border-radius: 0.5rem;
+    max-width: 700px;
 }
 
 .details {

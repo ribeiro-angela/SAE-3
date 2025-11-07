@@ -3,11 +3,14 @@
 <main class="container-fluid px-0">
 
     <!-- Bandeau principal -->
-    <section class="position-relative text-center text-white">
-        <img src="../assets/image/rejoindre-header.jpg" alt="Rejoindre l’Armée du Salut" class="img-fluid w-100" style="object-fit: cover; height: 350px;">
-        <div class="position-absolute top-50 start-50 translate-middle">
+    <section class="position-relative text-center text-white banner">
+        <img src="../assets/image/rejoindre-header.jpg"
+             alt="Rejoindre l’Armée du Salut"
+             class="img-fluid w-100 banner-img">
+
+        <div class="position-absolute top-50 start-50 translate-middle px-4 py-3 banner-overlay">
             <h1 class="fw-bold display-5 text-shadow">Nous rejoindre</h1>
-            <p class="fs-5">Rejoindre l’Armée du Salut, c’est s’engager au service de la société.</p>
+            <p class="fs-5 mb-0">Rejoindre l’Armée du Salut, c’est s’engager au service de la société.</p>
         </div>
     </section>
 
@@ -144,7 +147,7 @@
 </main>
 
 <script>
-    // Dépliement dynamique
+    // clic des bouttons "En savoir plus"
     document.querySelectorAll('.toggle-details').forEach(button => {
         button.addEventListener('click', () => {
             const target = document.querySelector(button.dataset.target);
@@ -152,15 +155,6 @@
             button.textContent = target.classList.contains('show') ? 'Réduire' : 'En savoir plus';
         });
     });
-
-    // Animation fade-in au scroll
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) entry.target.classList.add('visible');
-        });
-    }, { threshold: 0.2 });
-
-    document.querySelectorAll('.fade-section').forEach(el => observer.observe(el));
 </script>
 
 <?php include_once '../components/footer.php'; ?>
