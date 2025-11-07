@@ -14,7 +14,7 @@ include_once '../components/header.php'
                 </div>
             </div>
             <div class="image-slogan">
-                <img src="/assets/image/image-slogan.png" alt="Personnes bénéficiant du soutien de l'Armée du Salut">
+                <img src="/assets/image/imageSlogan.jpg" alt="Personnes bénéficiant du soutien de l'Armée du Salut">
             </div>
         </div>
     </section>
