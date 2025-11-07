@@ -1981,3 +1981,32 @@ footer a {
     font-size: 35px;
     border-bottom: 3px solid var(--accent-red);
 }
+
+/* === PAGE REJOINDRE === */
+
+.fade-section {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+}
+.fade-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.details {
+    display: none;
+    transition: all 0.3s ease-in-out;
+}
+.details.show {
+    display: block;
+}
+
+.text-shadow {
+    text-shadow: 0 2px 6px rgba(0,0,0,0.5);
+}
+
+.bg-light.rounded-3:hover {
+    transform: translateY(-3px);
+    transition: transform 0.3s ease;
+}
