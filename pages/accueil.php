@@ -28,7 +28,10 @@ include_once '../components/header.php'
                 <div class="row align-items-center">
                     <div class="col-lg-6">
                         <p class="association-text">
-                            La Fondation de l'Armée du Salut, présente dans 28 départements et 11 régions, gère plus de 200 établissements où des équipes professionnelles accompagnent enfants, adolescents, adultes isolés, familles, personnes handicapées ou âgées, ainsi que celles en convalescence.
+                            Présente dans 28 départements et 11 régions, la Fondation de l’Armée du Salut agit chaque jour pour accueillir, accompagner et redonner espoir à ceux qui traversent des moments difficiles.
+                            À travers plus de 200 établissements, ses équipes soutiennent enfants, familles, personnes isolées, âgées ou en situation de handicap, avec bienveillance et respect.
+                            <br>
+                            Animée par ses valeurs chrétiennes d’amour, de solidarité et d’espérance, la Fondation croit en la dignité et en la valeur de chaque personne, et œuvre pour bâtir une société plus humaine et fraternelle.
                         </p>
                     </div>
                     <div class="col-lg-6">
@@ -37,6 +40,87 @@ include_once '../components/header.php'
                             <img src="/assets/image/2.png" alt="Bénévoles" class="association-image">
                             <img src="/assets/image/3.png" alt="Distribution" class="association-image">
                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ACTIONS SOCIALES -->
+        <section class="section-actions-sociales">
+            <div class="container-fluid px-0">
+                <h2 class="text-center mb-5">NOS ACTIONS SOCIALES</h2>
+
+                <div class="actions-carousel-wrapper">
+                    <div class="actions-carousel" id="actionsCarousel">
+                        <!-- Carte 1 - Aide Alimentaire -->
+                        <div class="action-card active">
+                            <div class="row">
+                                <div class="action-image-container">
+                                    <div class="action-image">
+                                        <img src="/assets/image/jeunesse.jpg" alt="jeunesse" class="img-fluid">
+                                    </div>
+                                </div>
+                                <div class="action-content-container">
+                                    <div class="action-content">
+                                        <h3>Jeunesse</h3>
+                                        <p>Accompagnement des jeunes en difficulté, soutien éducatif et insertion sociale pour construire ensemble un avenir meilleur.</p>
+                                        <a href="#" class="btn-action">En savoir plus</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Carte 2 - Hébergement -->
+                        <div class="action-card">
+                            <div class="row">
+                                <div class="action-image-container">
+                                    <div class="action-image">
+                                        <img src="/assets/image/exclusionSociale.jpg" alt="Exclusion Sociale" class="img-fluid">
+                                    </div>
+                                </div>
+                                <div class="action-content-container">
+                                    <div class="action-content">
+                                        <h3>Exclusion Sociale</h3>
+                                        <p>Accueil, hébergement et réinsertion des personnes sans-abri et en situation de grande précarité.</p>
+                                        <a href="#" class="btn-action">En savoir plus</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Carte 3 - Insertion -->
+                        <div class="action-card">
+                            <div class="row">
+                                <div class="action-image-container">
+                                    <div class="action-image">
+                                        <img src="/assets/image/handicape.jpg" alt="Handicap"
+                                             class="img-fluid">
+                                    </div>
+                                </div>
+                                <div class="action-content-container">
+                                    <div class="action-content">
+                                        <h3>Handicap</h3>
+                                        <p>Structures adaptées et accompagnement personnalisé pour favoriser l'autonomie et l'épanouissement.</p>
+                                        <a href="#" class="btn-action">En savoir plus</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contrôles de navigation -->
+                    <button class="carousel-control prev" onclick="changeSlide(-1)">
+                        <span>‹</span>
+                    </button>
+                    <button class="carousel-control next" onclick="changeSlide(1)">
+                        <span>›</span>
+                    </button>
+
+                    <!-- Indicateurs -->
+                    <div class="carousel-indicators">
+                        <button class="indicator active" onclick="goToSlide(0)"></button>
+                        <button class="indicator" onclick="goToSlide(1)"></button>
+                        <button class="indicator" onclick="goToSlide(2)"></button>
                     </div>
                 </div>
             </div>
@@ -93,7 +177,80 @@ include_once '../components/header.php'
                 </div>
             </div>
         </section>
-    </main>
+
+        <script>
+            let currentSlide = 0;
+            const slides = document.querySelectorAll('.action-card');
+            const indicators = document.querySelectorAll('.indicator');
+            const carousel = document.querySelector('.actions-carousel');
+            let autoSlideInterval;
+
+            function changeSlide(direction) {
+                indicators[currentSlide].classList.remove('active');
+                currentSlide = (currentSlide + direction + slides.length) % slides.length;
+                carousel.style.transform = `translateX(${-currentSlide * 33.333}%)`;
+                indicators[currentSlide].classList.add('active');
+                resetAutoSlide();
+            }
+
+            function goToSlide(slideIndex) {
+                indicators[currentSlide].classList.remove('active');
+                currentSlide = slideIndex;
+                carousel.style.transform = `translateX(${-currentSlide * 33.333}%)`;
+                indicators[currentSlide].classList.add('active');
+                resetAutoSlide();
+            }
+
+            function startAutoSlide() {
+                // Nettoyer tout intervalle existant
+                if (autoSlideInterval) {
+                    clearInterval(autoSlideInterval);
+                }
+                // Démarrer le nouvel intervalle
+                autoSlideInterval = setInterval(() => {
+                    changeSlide(1);
+                }, 10000); // 10 secondes
+            }
+
+            function resetAutoSlide() {
+                // Redémarrer le timer
+                startAutoSlide();
+            }
+
+            // Initialisation SIMPLIFIÉE qui démarre au load
+            document.addEventListener('DOMContentLoaded', function() {
+                // S'assurer que la première slide est active
+                indicators[0].classList.add('active');
+
+                // Démarrer le timer IMMÉDIATEMENT
+                startAutoSlide();
+
+                // Pause au survol
+                const wrapper = document.querySelector('.actions-carousel-wrapper');
+                wrapper.addEventListener('mouseenter', () => {
+                    if (autoSlideInterval) {
+                        clearInterval(autoSlideInterval);
+                    }
+                });
+
+                wrapper.addEventListener('mouseleave', () => {
+                    startAutoSlide();
+                });
+            });
+
+            // Navigation clavier
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowLeft') changeSlide(-1);
+                if (e.key === 'ArrowRight') changeSlide(1);
+            });
+
+            // Redémarrer le timer si la page redevient visible
+            document.addEventListener('visibilitychange', function() {
+                if (!document.hidden && !autoSlideInterval) {
+                    startAutoSlide();
+                }
+            });
+        </script>
 
 <?php
 include_once '../components/footer.php'

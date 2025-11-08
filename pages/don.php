@@ -221,7 +221,6 @@ include_once '../components/header.php'
                 </div>
             </div>
         </section>
-    </main>
 
     <script>
         // Animation des images au survol
