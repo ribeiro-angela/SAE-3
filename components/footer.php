@@ -2,7 +2,7 @@
 ?>
 </main>
 <footer>
-<div class="footer-newsletter">
+    <div class="footer-newsletter">
         <div class="wrapper">
             <h3>Restez informé</h3>
             <p>Inscrivez-vous à notre newsletter pour recevoir nos actualités</p>
