@@ -10,72 +10,68 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="icon" type="image/png" href="/assets/image/logo.png">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-<header class="fixed-top">
-    <nav class="navbar">
-        <div class="nav-container">
+<header class="fixed-top navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+        <!-- LOGO -->
+        <a href="/pages/accueil.php" class="navbar-brand d-flex align-items-center">
+            <img src="/assets/image/logo.png" alt="logo AS" class="me-2" height="50">
+            <span class="logo-text d-none d-md-inline">Armée du Salut</span>
+        </a>
 
-            <!-- LOGO -->
-            <a href="/pages/accueil.php" class="nav-logo">
-                <img src="/assets/image/logo.png" alt="logo AS" class="logo-image">
-                <span class="logo-text">Armée du Salut</span>
-            </a>
+        <!-- BOUTON BURGER -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-            <!-- MENU -->
-            <div class="nav-menu">
-                <div class="nav-item">
+        <!-- MENU -->
+        <div class="collapse navbar-collapse" id="navMenu">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item">
                     <a href="/pages/accueil.php" class="nav-link active">Accueil</a>
-                </div>
+                </li>
 
-                <div class="nav-item dropdown">
-                    <a href="#" class="nav-link">Actions Sociales</a>
-                    <div class="dropdown-menu">
-                        <a href="#" class="dropdown-link">Aide alimentaire</a>
-                        <a href="#" class="dropdown-link">Hébergement d'urgence</a>
-                        <a href="#" class="dropdown-link">Insertion professionnelle</a>
-                        <a href="#" class="dropdown-link">Soutien aux familles</a>
-                    </div>
-                </div>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Actions Sociales</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#" class="dropdown-item">Aide alimentaire</a></li>
+                        <li><a href="#" class="dropdown-item">Hébergement d'urgence</a></li>
+                        <li><a href="#" class="dropdown-item">Insertion professionnelle</a></li>
+                        <li><a href="#" class="dropdown-item">Soutien aux familles</a></li>
+                    </ul>
+                </li>
 
-                <div class="nav-item dropdown">
-                    <a href="/pages/nos-missions.php" class="nav-link">Nos Missions</a>
-                    <div class="dropdown-menu">
-                        <!-- 🔗 Lien mis à jour vers histoire.php -->
-                        <a href="/pages/histoire.php" class="dropdown-link">Notre histoire</a>
-                        <a href="#" class="dropdown-link">Nos valeurs</a>
-                        <a href="#" class="dropdown-link">Nos engagements</a>
-                    </div>
-                </div>
+                <li class="nav-item dropdown">
+                    <a href="/pages/nos-missions.php" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Nos Missions</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/pages/histoire.php" class="dropdown-item">Notre histoire</a></li>
+                        <li><a href="#" class="dropdown-item">Nos valeurs</a></li>
+                        <li><a href="#" class="dropdown-item">Nos engagements</a></li>
+                    </ul>
+                </li>
 
-                <div class="nav-item">
+                <li class="nav-item">
                     <a href="#" class="nav-link">Actualités</a>
-                </div>
+                </li>
 
-                <div class="nav-item dropdown">
-                    <a href="/pages/don.php" class="nav-link">Nous soutenir</a>
-                    <div class="dropdown-menu">
-                        <a href="/pages/accueil.php" class="nav-link active">Accueil</a>
-                        <a href="../pages/nos-missions.php" class="nav-link">Nos Missions</a>
-                        <a href="../pages/histoire.php" class="dropdown-link">Notre histoire</a>
-                        <a href="../pages/don.php" class="dropdown-link">Faire un don</a>
-                        <a href="../pages/rejoindre.php" class="dropdown-link">Devenir bénévole</a>
-                    </div>
-                </div>
-            </div>
+                <li class="nav-item dropdown">
+                    <a href="/pages/don.php" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Nous soutenir</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="../pages/don.php" class="dropdown-item">Faire un don</a></li>
+                        <li><a href="../pages/rejoindre.php" class="dropdown-item">Devenir bénévole</a></li>
+                    </ul>
+                </li>
+            </ul>
 
-            <!-- BOUTONS DROITE -->
-            <div class="nav-actions">
+            <!-- BOUTON DON -->
+            <div class="ms-lg-3 mt-3 mt-lg-0">
                 <a href="/pages/don.php" class="btn-donate">Faire un don</a>
-                <div class="menu-toggle" id="mobile-menu">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
             </div>
-
         </div>
-    </nav>
+    </div>
 </header>
 
 <main>
