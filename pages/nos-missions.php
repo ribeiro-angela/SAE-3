@@ -14,9 +14,9 @@ include_once '../components/header.php'
         <!-- HIGHLIGHT PARAGRAPHE -->
         <section class="py-5 bg-cream">
             <div class="container text-center">
-                <p class="lead fs-5">
+                <p class="lead fs-5 px-2 px-md-0">
                     Prendre soin des personnes est le centre de la démarche de <span class="text-primary fw-bold">la Congrégation</span> et de <span class="text-primary fw-bold">la Fondation de l'Armée du Salut</span>.
-                    <br> Les deux entités accueillent, soutiennent, et accompagnent les femmes et les hommes de toute origine et condition sans distinction aucune.
+                    <br class="d-none d-md-block"> Les deux entités accueillent, soutiennent, et accompagnent les femmes et les hommes de toute origine et condition sans distinction aucune.
                 </p>
             </div>
         </section>
@@ -72,12 +72,12 @@ include_once '../components/header.php'
         <!-- NOTRE MISSION -->
         <section class="py-5 text-white" style="background-color: var(--secondary-color);">
             <div class="container">
-                <div class="row align-items-center g-5">
+                <div class="row align-items-center g-4 g-lg-5">
                     <div class="col-lg-6">
                         <h2 class="display-4 fw-bold mb-3">Notre Mission.</h2>
                         <h3 class="h4 mb-4">
-                            Personnes isolées ou familles <br>
-                            en situation de grande <br>
+                            Personnes isolées ou familles <br class="d-none d-md-block">
+                            en situation de grande <br class="d-none d-md-block">
                             précarité,
                         </h3>
                         <p class="lead mb-4">
@@ -103,7 +103,7 @@ include_once '../components/header.php'
                         </div>
                     </div>
                     <div class="col-lg-6 text-center">
-                        <img src="/assets/image/mission1.jpg" alt="Mission" class="img-fluid rounded-circle shadow" style="max-width: 400px;">
+                        <img src="/assets/image/mission1.jpg" alt="Mission" class="img-fluid rounded-circle shadow" style="max-width: 400px; width: 100%;">
                     </div>
                 </div>
             </div>
@@ -113,39 +113,39 @@ include_once '../components/header.php'
         <section class="py-5 bg-dark text-white">
             <div class="container">
                 <h2 class="text-center display-4 fw-bold mb-5">La Fondation en Chiffres</h2>
-                <div class="row g-4 text-center">
-                    <div class="col-md-4">
-                        <div class="stat-card-custom p-4 rounded">
+                <div class="row g-3 g-md-4 text-center">
+                    <div class="col-6 col-md-4">
+                        <div class="stat-card-custom p-3 p-md-4 rounded">
                             <span class="display-3 fw-bold d-block" data-target="225">0</span>
                             <span class="fs-5">structures et services</span>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="stat-card-custom p-4 rounded">
+                    <div class="col-6 col-md-4">
+                        <div class="stat-card-custom p-3 p-md-4 rounded">
                             <span class="display-3 fw-bold d-block" data-target="23000">0</span>
                             <span class="fs-5">personnes accueillies</span>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="stat-card-custom p-4 rounded">
+                    <div class="col-6 col-md-4">
+                        <div class="stat-card-custom p-3 p-md-4 rounded">
                             <span class="display-3 fw-bold d-block" data-target="2600000">0</span>
                             <span class="fs-5">journées d'hébergement</span>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="stat-card-custom p-4 rounded">
+                    <div class="col-6 col-md-4">
+                        <div class="stat-card-custom p-3 p-md-4 rounded">
                             <span class="display-3 fw-bold d-block" data-target="205">0</span>
                             <span class="fs-5">millions d'€ pour les missions sociales</span>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="stat-card-custom p-4 rounded">
+                    <div class="col-6 col-md-4">
+                        <div class="stat-card-custom p-3 p-md-4 rounded">
                             <span class="display-3 fw-bold d-block" data-target="32">0</span>
                             <span class="fs-5">départements couverts</span>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="stat-card-custom p-4 rounded">
+                    <div class="col-6 col-md-4">
+                        <div class="stat-card-custom p-3 p-md-4 rounded">
                             <span class="display-3 fw-bold d-block" data-target="134">0</span>
                             <span class="fs-5">pays dans le monde</span>
                         </div>
@@ -159,7 +159,7 @@ include_once '../components/header.php'
             <div class="container">
                 <h2 class="text-center display-4 fw-bold mb-5">Les missions de la <span class="text-danger">Congrégation</span></h2>
 
-                <div class="row align-items-center g-5">
+                <div class="row align-items-center g-4 g-lg-5">
                     <div class="col-lg-6">
                         <h2 class="display-4 fw-bold mb-3">Une Double Mission.</h2>
                         <h3 class="h4 mb-4">Depuis ses origines,</h3>
@@ -172,7 +172,7 @@ include_once '../components/header.php'
                         </p>
                     </div>
                     <div class="col-lg-6 text-center">
-                        <img src="/assets/image/congregation.jpg" alt="Congrégation" class="img-fluid rounded shadow" style="max-width: 500px;">
+                        <img src="/assets/image/congregation.jpg" alt="Congrégation" class="img-fluid rounded shadow" style="max-width: 500px; width: 100%;">
                     </div>
                 </div>
             </div>
@@ -182,9 +182,9 @@ include_once '../components/header.php'
         <section class="py-5 bg-light">
             <div class="container">
                 <h2 class="text-center display-4 fw-bold mb-4">Action Sociale des Postes</h2>
-                <p class="text-center lead text-muted mb-5">
+                <p class="text-center lead text-muted mb-5 px-2 px-md-0">
                     L'action sociale représente près de <span class="text-danger fw-bold">60% du temps de travail de l'officier</span>.
-                    <br>Elle est subventionnée par la Fondation de l'Armée du Salut, en fonction des projets montés.
+                    <br class="d-none d-md-block">Elle est subventionnée par la Fondation de l'Armée du Salut, en fonction des projets montés.
                 </p>
 
                 <div class="row g-4">
@@ -250,8 +250,8 @@ include_once '../components/header.php'
         <section class="py-5 bg-white">
             <div class="container">
                 <div class="row align-items-center g-4">
-                    <div class="col-md-4 text-center">
-                        <div class="bg-light rounded-circle p-5 mx-auto" style="width: 200px; height: 200px;">
+                    <div class="col-md-4 text-center mb-4 mb-md-0">
+                        <div class="bg-light rounded-circle p-4 p-md-5 mx-auto" style="width: 200px; height: 200px;">
                             <div class="h2 fw-bold text-primary">52</div>
                             <div class="fw-bold">Postes évangéliques</div>
                             <small class="text-muted">Répartis dans toute la France</small>
@@ -273,38 +273,38 @@ include_once '../components/header.php'
             </div>
         </section>
 
-    <script>
-        // Animation des chiffres
-        document.addEventListener('DOMContentLoaded', function() {
-            const statNumbers = document.querySelectorAll('[data-target]');
+        <script>
+            // Animation des chiffres
+            document.addEventListener('DOMContentLoaded', function() {
+                const statNumbers = document.querySelectorAll('[data-target]');
 
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const element = entry.target;
-                        const target = parseInt(element.getAttribute('data-target'));
-                        const duration = 2000;
-                        const increment = target / (duration / 16);
-                        let current = 0;
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const element = entry.target;
+                            const target = parseInt(element.getAttribute('data-target'));
+                            const duration = 2000;
+                            const increment = target / (duration / 16);
+                            let current = 0;
 
-                        const updateNumber = () => {
-                            current += increment;
-                            if (current < target) {
-                                element.textContent = Math.floor(current).toLocaleString('fr-FR');
-                                requestAnimationFrame(updateNumber);
-                            } else {
-                                element.textContent = target.toLocaleString('fr-FR');
-                            }
-                        };
-                        updateNumber();
-                        observer.unobserve(element);
-                    }
-                });
-            }, { threshold: 0.5 });
+                            const updateNumber = () => {
+                                current += increment;
+                                if (current < target) {
+                                    element.textContent = Math.floor(current).toLocaleString('fr-FR');
+                                    requestAnimationFrame(updateNumber);
+                                } else {
+                                    element.textContent = target.toLocaleString('fr-FR');
+                                }
+                            };
+                            updateNumber();
+                            observer.unobserve(element);
+                        }
+                    });
+                }, { threshold: 0.5 });
 
-            statNumbers.forEach(stat => observer.observe(stat));
-        });
-    </script>
+                statNumbers.forEach(stat => observer.observe(stat));
+            });
+        </script>
 
 <?php
 include_once '../components/footer.php'

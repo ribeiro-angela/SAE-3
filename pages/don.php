@@ -9,7 +9,7 @@ include_once '../components/header.php'
                 <h1 class="title-Don">VOTRE DON</h1>
                 <h1 class="title-Don1">TRANSFORME DES VIES</h1>
                 <h3 class="subtitle-Dons">
-                    Un repas, un hébergement, une écoute, une chance de repartir…<br>
+                    Un repas, un hébergement, une écoute, une chance de repartir…<br class="d-none d-md-block">
                     Votre don nous permet d'agir chaque jour auprès des personnes en difficultés.
                 </h3>
                 <div class="btn-don-container">
@@ -21,20 +21,20 @@ include_once '../components/header.php'
         <!-- SECTION RÉDUCTION D'IMPÔT -->
         <section class="py-5 bg-white">
             <div class="container">
-                <div class="row g-5 align-items-start">
+                <div class="row g-4 g-lg-5 align-items-start">
                     <div class="col-lg-7">
                         <h2 class="display-5 fw-bold text-danger mb-3">75% de réduction d'impôt</h2>
                         <p class="text-muted mb-4">Jusqu'à 1 000 € (66% au-delà). Un reçu fiscal vous est envoyé automatiquement.</p>
 
-                        <div class="bg-light rounded-4 p-4 mb-4">
+                        <div class="bg-light rounded-4 p-3 p-md-4 mb-4">
                             <div class="row align-items-center text-center">
-                                <div class="col-md-5">
+                                <div class="col-md-5 mb-3 mb-md-0">
                                     <div class="don-calcul-box">
                                         <h4 class="text-danger mb-2">Votre Don</h4>
                                         <p class="h2 fw-bold text-danger mb-0">200€</p>
                                     </div>
                                 </div>
-                                <div class="col-md-2">
+                                <div class="col-md-2 d-none d-md-block">
                                     <div class="h1 text-muted">→</div>
                                 </div>
                                 <div class="col-md-5">
@@ -47,13 +47,13 @@ include_once '../components/header.php'
                         </div>
 
                         <p class="text-dark">
-                            Un repas, un hébergement, une écoute, une chance de repartir…<br>
+                            Un repas, un hébergement, une écoute, une chance de repartir…<br class="d-none d-md-block">
                             Votre don nous permet d'agir chaque jour auprès des personnes en difficultés.
                         </p>
                     </div>
 
                     <div class="col-lg-5">
-                        <div class="bg-white border rounded-4 p-4 shadow" id="formulaire-don">
+                        <div class="bg-white border rounded-4 p-3 p-md-4 shadow" id="formulaire-don">
                             <h3 class="text-center text-primary fw-bold mb-3">Votre Don Sécurisé</h3>
                             <p class="text-center text-muted mb-4">
                                 Paiements sécurisés avec les derniers protocoles de chiffrement, conçus pour respecter les normes les plus élevées de l'industrie.
@@ -70,19 +70,19 @@ include_once '../components/header.php'
                             <p class="text-center fst-italic text-muted mb-4">Chaque don compte !</p>
 
                             <div class="row g-2 mb-3">
-                                <div class="col-6">
+                                <div class="col-6 col-sm-3">
                                     <input type="radio" class="btn-check" name="montant" id="montant5" checked>
                                     <label class="btn btn-outline-secondary w-100" for="montant5">5€</label>
                                 </div>
-                                <div class="col-6">
+                                <div class="col-6 col-sm-3">
                                     <input type="radio" class="btn-check" name="montant" id="montant50">
                                     <label class="btn btn-outline-secondary w-100" for="montant50">50€</label>
                                 </div>
-                                <div class="col-6">
+                                <div class="col-6 col-sm-3">
                                     <input type="radio" class="btn-check" name="montant" id="montant100">
                                     <label class="btn btn-outline-secondary w-100" for="montant100">100€</label>
                                 </div>
-                                <div class="col-6">
+                                <div class="col-6 col-sm-3">
                                     <input type="radio" class="btn-check" name="montant" id="montant200">
                                     <label class="btn btn-outline-secondary w-100" for="montant200">200€</label>
                                 </div>
@@ -103,11 +103,11 @@ include_once '../components/header.php'
         <!-- SECTION PRÉCARITÉ -->
         <section class="section-precarite">
             <div class="container">
-                <div class="row align-items-center g-5">
-                    <div class="col-lg-6">
+                <div class="row align-items-center g-4 g-lg-5">
+                    <div class="col-lg-6 order-2 order-lg-1">
                         <h2 class="precarite-titre">La précarité <br>prive de <span class="precarite-accent">tout.</span></h2>
                         <h3 class="precarite-sous-titre">
-                            Le sommeil, la santé, <br>
+                            Le sommeil, la santé, <br class="d-none d-md-block">
                             la sécurité, l'espoir, parfois la vie.
                         </h3>
                         <p class="precarite-texte">
@@ -116,8 +116,8 @@ include_once '../components/header.php'
                         </p>
                         <a href="#formulaire-don" class="btn btn-danger btn-lg px-4">JE FAIS UN DON</a>
                     </div>
-                    <div class="col-lg-6 text-center">
-                        <img src="/assets/image/image-precarite.png" alt="Aide aux sans-abri" class="precarite-image">
+                    <div class="col-lg-6 text-center order-1 order-lg-2">
+                        <img src="/assets/image/image-precarite.png" alt="Aide aux sans-abri" class="precarite-image img-fluid">
                     </div>
                 </div>
             </div>
@@ -148,24 +148,24 @@ include_once '../components/header.php'
                     <p class="impact-sous-titre">Grâce à vos dons, chaque jour nous pouvons :</p>
                 </div>
 
-                <div class="row g-4">
+                <div class="row g-4 g-lg-5">
                     <div class="col-md-4">
                         <div class="text-center">
-                            <img src="/assets/image/servir.jpg" alt="Servir des repas" class="impact-image">
+                            <img src="/assets/image/servir.jpg" alt="Servir des repas" class="impact-image img-fluid">
                             <h3 class="impact-carte-titre">Servir</h3>
                             <p class="impact-carte-texte">Servir des repas aux personnes qui ont faim</p>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="text-center">
-                            <img src="/assets/image/offrir.jpg" alt="Offrir un hébergement" class="impact-image">
+                            <img src="/assets/image/offrir.jpg" alt="Offrir un hébergement" class="impact-image img-fluid">
                             <h3 class="impact-carte-titre">Offrir</h3>
                             <p class="impact-carte-texte">Offrir un hébergement d'urgence</p>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="text-center">
-                            <img src="/assets/image/accompagner.jpg" alt="Accompagner" class="impact-image">
+                            <img src="/assets/image/accompagner.jpg" alt="Accompagner" class="impact-image img-fluid">
                             <h3 class="impact-carte-titre">Accompagner</h3>
                             <p class="impact-carte-texte">Accompagner vers la réinsertion sociale et professionnelle</p>
                         </div>
@@ -222,19 +222,19 @@ include_once '../components/header.php'
             </div>
         </section>
 
-    <script>
-        // Animation des images au survol
-        document.querySelectorAll('img[style*="grayscale"]').forEach(img => {
-            img.addEventListener('mouseenter', () => {
-                img.style.filter = 'grayscale(0%)';
-                img.style.transform = 'scale(1.05)';
+        <script>
+            // Animation des images au survol
+            document.querySelectorAll('img[style*="grayscale"]').forEach(img => {
+                img.addEventListener('mouseenter', () => {
+                    img.style.filter = 'grayscale(0%)';
+                    img.style.transform = 'scale(1.05)';
+                });
+                img.addEventListener('mouseleave', () => {
+                    img.style.filter = 'grayscale(100%)';
+                    img.style.transform = 'scale(1)';
+                });
             });
-            img.addEventListener('mouseleave', () => {
-                img.style.filter = 'grayscale(100%)';
-                img.style.transform = 'scale(1)';
-            });
-        });
-    </script>
+        </script>
 
 <?php
 include_once '../components/footer.php'
