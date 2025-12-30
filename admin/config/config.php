@@ -1,25 +1,18 @@
 <?php
 /**
- * Configuration de la base de données
+ * Configuration de la base de données SQLite
  */
 
-// Configuration de la base de données
-define('DB_HOST', 'localhost');
-define('DB_NAME', 'armee_salut');
-define('DB_USER', 'root');
-define('DB_PASS', '');
+// Chemin vers la base de données
+define('DB_PATH', __DIR__ . '/../../database/arme_du_salut.db');
 
-// Configuration du site
-define('SITE_URL', 'http://localhost/armee-salut');
-define('ADMIN_URL', SITE_URL . '/admin');
-
-// Démarrage de la session si elle n'est pas déjà démarrée
+// Démarrage de la session
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
 /**
- * Classe de connexion à la base de données
+ * Classe de connexion à SQLite
  */
 class Database {
     private static $instance = null;
@@ -27,16 +20,11 @@ class Database {
 
     private function __construct() {
         try {
-            $this->conn = new PDO(
-                "mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=utf8mb4",
-                DB_USER,
-                DB_PASS,
-                [
-                    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-                    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-                    PDO::ATTR_EMULATE_PREPARES => false
-                ]
-            );
+            $this->conn = new PDO('sqlite:' . DB_PATH);
+            $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $this->conn->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+            // Activer les clés étrangères
+            $this->conn->exec('PRAGMA foreign_keys = ON');
         } catch(PDOException $e) {
             die("Erreur de connexion : " . $e->getMessage());
         }
@@ -52,49 +40,38 @@ class Database {
     public function getConnection() {
         return $this->conn;
     }
-
-    // Empêcher le clonage de l'instance
-    private function __clone() {}
-
-    // Empêcher la désérialisation de l'instance
-    public function __wakeup() {
-        throw new Exception("Cannot unserialize singleton");
-    }
 }
 
 /**
- * Fonction pour vérifier si l'utilisateur est connecté
+ * Vérifier si l'utilisateur est connecté
  */
 function isLoggedIn() {
     return isset($_SESSION['admin_id']) && !empty($_SESSION['admin_id']);
 }
 
 /**
- * Fonction pour rediriger si non connecté
+ * Rediriger si non connecté
  */
 function requireLogin() {
     if (!isLoggedIn()) {
-        header('Location: ' . ADMIN_URL . '/login.php');
+        header('Location: ../login.php');
         exit();
     }
 }
 
 /**
- * Fonction pour nettoyer les données entrées
+ * Nettoyer les données
  */
 function clean($data) {
-    $data = trim($data);
-    $data = stripslashes($data);
-    $data = htmlspecialchars($data);
-    return $data;
+    return htmlspecialchars(trim($data), ENT_QUOTES, 'UTF-8');
 }
 
 /**
- * Fonction pour afficher les messages flash
+ * Messages flash
  */
 function setFlashMessage($type, $message) {
     $_SESSION['flash_message'] = [
-        'type' => $type, // success, error, warning, info
+        'type' => $type,
         'message' => $message
     ];
 }
@@ -109,16 +86,10 @@ function getFlashMessage() {
 }
 
 /**
- * Fonction pour formater une date
+ * Formater une date
  */
-function formatDate($date, $format = 'd/m/Y') {
+function formatDate($date) {
     if (empty($date)) return '-';
-    return date($format, strtotime($date));
+    return date('d/m/Y', strtotime($date));
 }
-
-/**
- * Fonction pour formater un montant
- */
-function formatMontant($montant) {
-    return number_format($montant, 2, ',', ' ') . ' €';
-}
+?>
