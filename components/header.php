@@ -24,7 +24,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
             <!-- LOGO -->
             <a href="/pages/accueil.php" class="navbar-brand">
                 <img src="/assets/image/logo.png" alt="logo AS" class="logo-image">
-                <span class="logo-text">Armée du Salut</span>
+                <!--<span class="logo-text">Armée du Salut</span> -->
             </a>
 
             <!-- BOUTON BURGER -->
@@ -116,9 +116,8 @@ $current_page = basename($_SERVER['PHP_SELF']);
                     <li class="nav-item">
                         <a href="#" class="nav-link">
                             <i class="fas fa-envelope"></i> Contact
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">Contact</a>
-                            </li>
+                        </a>
+                    </li>
 
                             <?php if (isset($_SESSION['user_id'])): ?>
                                 <li class="nav-item">
@@ -129,8 +128,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
                             <?php endif; ?>
 
                 </ul>
-                        </a>
-                    </li>
+
 
                     <?php if ($isLoggedIn): ?>
                         <!-- SI CONNECTÉ -->
