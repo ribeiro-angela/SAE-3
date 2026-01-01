@@ -118,11 +118,11 @@ $regimes = $db->query("SELECT * FROM REGIME_ALIMENTAIRE ORDER BY NomRegime")->fe
 $handicaps = $db->query("SELECT * FROM HANDICAP ORDER BY NomHandicap")->fetchAll(PDO::FETCH_ASSOC);
 $competences = $db->query("SELECT * FROM COMPETENCE ORDER BY NomCompetence")->fetchAll(PDO::FETCH_ASSOC);
 
-include __DIR__ . '/../components/admin_header.php';
+include __DIR__ . '/components/admin_header.php';
 ?>
 
     <div class="admin-container">
-        <?php include __DIR__ . '/../components/admin_sidebar.php'; ?>
+        <?php include __DIR__ . '/components/admin_sidebar.php'; ?>
 
         <div class="admin-content">
             <div class="content-header">
@@ -269,4 +269,4 @@ include __DIR__ . '/../components/admin_header.php';
         </div>
     </div>
 
-<?php include __DIR__ . '/../components/admin_footer.php'; ?>
+<?php include __DIR__ . '/components/admin_footer.php'; ?>

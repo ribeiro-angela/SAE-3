@@ -90,11 +90,11 @@ $dons_annee = $db->query("
 ")->fetchColumn();
 $nb_donateurs = $db->query("SELECT COUNT(*) FROM DONATEUR WHERE Actif = 1")->fetchColumn();
 
-include __DIR__ . '/../components/admin_header.php';
+include __DIR__ . '/components/admin_header.php';
 ?>
 
     <div class="admin-container">
-        <?php include __DIR__ . '/../components/admin_sidebar.php'; ?>
+        <?php include __DIR__ . '/components/admin_sidebar.php'; ?>
 
         <div class="admin-content">
             <div class="content-header">
@@ -334,4 +334,4 @@ include __DIR__ . '/../components/admin_header.php';
         }
     </style>
 
-<?php include __DIR__ . '/../components/admin_footer.php'; ?>
+<?php include __DIR__ . '/components/admin_footer.php'; ?>

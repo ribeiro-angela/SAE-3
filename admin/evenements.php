@@ -47,11 +47,11 @@ $evenements = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 $types = $db->query("SELECT DISTINCT TypeEvenement FROM EVENEMENT")->fetchAll(PDO::FETCH_COLUMN);
 
-include __DIR__ . '/../components/admin_header.php';
+include __DIR__ . '/components/admin_header.php';
 ?>
 
     <div class="admin-container">
-        <?php include __DIR__ . '/../components/admin_sidebar.php'; ?>
+        <?php include __DIR__ . '/components/admin_sidebar.php'; ?>
 
         <div class="admin-content">
             <div class="content-header">
@@ -178,4 +178,4 @@ include __DIR__ . '/../components/admin_header.php';
         }
     </style>
 
-<?php include __DIR__ . '/../components/admin_footer.php'; ?>
+<?php include __DIR__ . '/components/admin_footer.php'; ?>

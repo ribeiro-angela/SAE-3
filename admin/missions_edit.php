@@ -78,11 +78,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 $categories = $db->query("SELECT * FROM CATEGORIE ORDER BY NomCategorie")->fetchAll(PDO::FETCH_ASSOC);
 $statuts = ['Planifiée', 'En cours', 'Terminée', 'Annulée'];
 
-include __DIR__ . '/../components/admin_header.php';
+include __DIR__ . '/components/admin_header.php';
 ?>
 
     <div class="admin-container">
-        <?php include __DIR__ . '/../components/admin_sidebar.php'; ?>
+        <?php include __DIR__ . '/components/admin_sidebar.php'; ?>
 
         <div class="admin-content">
             <div class="content-header">
@@ -187,4 +187,4 @@ include __DIR__ . '/../components/admin_header.php';
         </div>
     </div>
 
-<?php include __DIR__ . '/../components/admin_footer.php'; ?>
+<?php include __DIR__ . '/components/admin_footer.php'; ?>
