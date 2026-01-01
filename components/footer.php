@@ -25,14 +25,41 @@
     <section class="footer-main py-5 text-white">
         <div class="container">
             <div class="row g-4">
-                <div class="col-lg-6">
+                <div class="col-lg-3">
                     <img src="/assets/image/logo.png" alt="Logo" class="mb-3" width="80">
                     <p class="fst-italic mb-3">Depuis 1881, l'Armée du Salut vient en aide aux plus démunis avec compassion et détermination.</p>
                     <div class="d-flex gap-2 flex-wrap">
-                        <a href="../pages/don.php" class="btn btn-danger">Faire un don</a>
-                        <a href="../pages/rejoindre.php" class="btn btn-outline-light">Devenir bénévole</a>
+                        <a href="/pages/don.php" class="btn btn-danger">
+                            <i class="fas fa-heart"></i> Faire un don
+                        </a>
+                        <a href="/pages/rejoindre.php" class="btn btn-outline-light">
+                            <i class="fas fa-user-plus"></i> Devenir bénévole
+                        </a>
                     </div>
                 </div>
+
+                <div class="col-lg-3">
+                    <h5 class="mb-3">Découvrir</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2">
+                            <i class="fas fa-chevron-right me-2"></i>
+                            <a href="/pages/accueil.php" class="text-white text-decoration-none">Accueil</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-chevron-right me-2"></i>
+                            <a href="/pages/histoire.php" class="text-white text-decoration-none">Notre Histoire</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-chevron-right me-2"></i>
+                            <a href="/pages/nos-missions.php" class="text-white text-decoration-none">Nos Missions</a>
+                        </li>
+                        <li class="mb-2">
+                            <i class="fas fa-chevron-right me-2"></i>
+                            <a href="/pages/rejoindre.php" class="text-white text-decoration-none">Nous Rejoindre</a>
+                        </li>
+                    </ul>
+                </div>
+
                 <div class="col-lg-3">
                     <h5 class="mb-3">Nos actions</h5>
                     <ul class="list-unstyled">
@@ -54,6 +81,7 @@
                         </li>
                     </ul>
                 </div>
+
                 <div class="col-lg-3">
                     <h5 class="mb-3">Nous contacter</h5>
                     <address class="mb-3">
@@ -67,7 +95,7 @@
                         <i class="fas fa-phone me-2"></i>
                         <a href="tel:+33143622500" class="text-white text-decoration-none fw-bold">01 43 62 25 00</a>
                     </p>
-                    <div class="d-flex gap-3">
+                    <div class="d-flex gap-3 mb-3">
                         <a href="#" class="text-white fs-4" aria-label="Facebook">
                             <i class="fab fa-facebook"></i>
                         </a>
@@ -81,6 +109,16 @@
                             <i class="fab fa-twitter"></i>
                         </a>
                     </div>
+
+                    <?php if (isset($_SESSION['user_id'])): ?>
+                        <a href="/admin/dashboard.php" class="btn btn-outline-light btn-sm">
+                            <i class="fas fa-tachometer-alt"></i> Espace Admin
+                        </a>
+                    <?php else: ?>
+                        <a href="/admin/login.php" class="btn btn-outline-light btn-sm">
+                            <i class="fas fa-sign-in-alt"></i> Connexion Équipe
+                        </a>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
@@ -98,6 +136,12 @@
                     <a href="#" class="text-white text-decoration-none small">Mentions légales</a>
                     <a href="#" class="text-white text-decoration-none small">Politique de confidentialité</a>
                     <a href="#" class="text-white text-decoration-none small">Cookies</a>
+                    <?php if (isset($_SESSION['user_id'])): ?>
+                        <span class="text-white small">|</span>
+                        <a href="/admin/logout.php" class="text-white text-decoration-none small">
+                            <i class="fas fa-sign-out-alt"></i> Déconnexion
+                        </a>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
