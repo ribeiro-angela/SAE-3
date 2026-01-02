@@ -39,10 +39,13 @@ body {
     background: var(--light-bg);
     color: var(--text-color);
     line-height: 1.6;
-    padding-top: 80px;
 }
 
 /* ========== HEADER ========== */
+header.fixed-top + main {
+    padding-top: 80px;
+}
+
 .navbar {
     background: var(--primary-color) !important;
     height: 80px;
