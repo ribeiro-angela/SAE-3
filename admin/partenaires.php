@@ -1,7 +1,8 @@
 <?php
 session_start();
+
 if (!isset($_SESSION['user_id'])) {
-    header('Location: login.php');
+    header('Location: /pages/login.php');
     exit;
 }
 
@@ -9,7 +10,7 @@ try {
     $db = new PDO('sqlite:' . __DIR__ . '/../database/arme_du_salut.db');
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch(PDOException $e) {
-    die('Erreur : ' . $e->getMessage());
+    die('Erreur de connexion : ' . $e->getMessage());
 }
 
 // Gestion des actions
@@ -18,9 +19,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         switch ($_POST['action']) {
             case 'delete':
                 $id = $_POST['id'];
-                $stmt = $db->prepare("UPDATE MISSIONS SET Statut = 'Annulée' WHERE IDMission = ?");
+                $stmt = $db->prepare("UPDATE PARTENAIRE SET Actif = 0 WHERE IDPartenaire = ?");
                 $stmt->execute([$id]);
-                $_SESSION['success'] = "Mission annulée avec succès";
+                $_SESSION['success'] = "Partenaire désactivé avec succès";
+                break;
+
+            case 'activate':
+                $id = $_POST['id'];
+                $stmt = $db->prepare("UPDATE PARTENAIRE SET Actif = 1 WHERE IDPartenaire = ?");
+                $stmt->execute([$id]);
+                $_SESSION['success'] = "Partenaire réactivé avec succès";
                 break;
         }
     }
@@ -28,58 +36,53 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 // Filtres
 $search = isset($_GET['search']) ? $_GET['search'] : '';
-$statut_filter = isset($_GET['statut']) ? $_GET['statut'] : '';
-$categorie_filter = isset($_GET['categorie']) ? $_GET['categorie'] : '';
+$type_filter = isset($_GET['type']) ? $_GET['type'] : '';
+$actif_filter = isset($_GET['actif']) ? $_GET['actif'] : '1';
 
 // Construction de la requête
 $sql = "
     SELECT 
-        m.*,
-        c.NomCategorie,
-        c.Couleur,
-        u.Nom || ' ' || u.Prenom as Responsable,
-        (SELECT COUNT(*) FROM PARTICIPE_MISSION pm WHERE pm.IDMission = m.IDMission) as NbInscrits
-    FROM MISSIONS m
-    LEFT JOIN CATEGORIE c ON m.IDCategorie = c.IDCategorie
-    LEFT JOIN UTILISATEUR u ON m.IDResponsable = u.IDUtilisateur
+        p.IDPartenaire,
+        p.NomPartenaire,
+        p.TypePartenaire,
+        p.Telephone,
+        p.Mail,
+        p.Actif,
+        p.DateCreation,
+        (SELECT COUNT(*) FROM SUBVENTION s WHERE s.IDPartenaire = p.IDPartenaire) as NbSubventions,
+        (SELECT COALESCE(SUM(s.Montant), 0) FROM SUBVENTION s WHERE s.IDPartenaire = p.IDPartenaire) as TotalSubventions
+    FROM PARTENAIRE p
     WHERE 1=1
 ";
 
 $params = [];
 
 if ($search) {
-    $sql .= " AND (m.Titre LIKE ? OR m.Description LIKE ? OR m.Lieu LIKE ?)";
+    $sql .= " AND (p.NomPartenaire LIKE ? OR p.Mail LIKE ? OR p.Telephone LIKE ?)";
     $params[] = "%$search%";
     $params[] = "%$search%";
     $params[] = "%$search%";
 }
 
-if ($statut_filter) {
-    $sql .= " AND m.Statut = ?";
-    $params[] = $statut_filter;
+if ($type_filter) {
+    $sql .= " AND p.TypePartenaire = ?";
+    $params[] = $type_filter;
 }
 
-if ($categorie_filter) {
-    $sql .= " AND m.IDCategorie = ?";
-    $params[] = $categorie_filter;
+if ($actif_filter !== '') {
+    $sql .= " AND p.Actif = ?";
+    $params[] = $actif_filter;
 }
 
-$sql .= " ORDER BY m.DateMission DESC, m.HeureMission DESC";
+$sql .= " ORDER BY p.NomPartenaire";
 
 $stmt = $db->prepare($sql);
 $stmt->execute($params);
-$missions = $stmt->fetchAll(PDO::FETCH_ASSOC);
+$partenaires = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-// Listes pour filtres
-$categories = $db->query("SELECT * FROM CATEGORIE ORDER BY NomCategorie")->fetchAll(PDO::FETCH_ASSOC);
-$statuts = ['Planifiée', 'En cours', 'Terminée', 'Annulée'];
+// Liste des types pour le filtre
+$types = $db->query("SELECT DISTINCT TypePartenaire FROM PARTENAIRE ORDER BY TypePartenaire")->fetchAll(PDO::FETCH_COLUMN);
 
-// Statistiques
-$stats = [];
-$stats['total'] = $db->query("SELECT COUNT(*) FROM MISSIONS")->fetchColumn();
-$stats['planifiees'] = $db->query("SELECT COUNT(*) FROM MISSIONS WHERE Statut = 'Planifiée'")->fetchColumn();
-$stats['en_cours'] = $db->query("SELECT COUNT(*) FROM MISSIONS WHERE Statut = 'En cours'")->fetchColumn();
-$stats['a_venir'] = $db->query("SELECT COUNT(*) FROM MISSIONS WHERE DateMission >= date('now') AND Statut = 'Planifiée'")->fetchColumn();
 
 include __DIR__ . '/components/admin_header.php';
 ?>
@@ -91,7 +94,7 @@ include __DIR__ . '/components/admin_header.php';
             <div class="content-header">
                 <h1>Gestion des partenaires</h1>
                 <a href="/admin/partenaires_add.php" class="btn-primary">
-                    <i class="fas fa-plus"></i> Ajouter un partenaire
+                    <i class="fas fa-handshake"></i> Ajouter un partenaire
                 </a>
             </div>
 
@@ -107,17 +110,17 @@ include __DIR__ . '/components/admin_header.php';
                     <div class="filter-group">
                         <label>Rechercher</label>
                         <input type="text" name="search" value="<?php echo htmlspecialchars($search); ?>"
-                               placeholder="Titre, description, lieu...">
+                               placeholder="Nom, email, téléphone...">
                     </div>
 
                     <div class="filter-group">
-                        <label>Catégorie</label>
-                        <select name="categorie">
-                            <option value="">Toutes</option>
-                            <?php foreach ($categories as $cat): ?>
-                                <option value="<?php echo $cat['IDCategorie']; ?>"
-                                    <?php echo $categorie_filter == $cat['IDCategorie'] ? 'selected' : ''; ?>>
-                                    <?php echo htmlspecialchars($cat['NomCategorie']); ?>
+                        <label>Type</label>
+                        <select name="type">
+                            <option value="">Tous les types</option>
+                            <?php foreach ($types as $t): ?>
+                                <option value="<?php echo htmlspecialchars($t); ?>"
+                                        <?php echo $type_filter === $t ? 'selected' : ''; ?>>
+                                    <?php echo htmlspecialchars($t); ?>
                                 </option>
                             <?php endforeach; ?>
                         </select>
@@ -125,29 +128,32 @@ include __DIR__ . '/components/admin_header.php';
 
                     <div class="filter-group">
                         <label>Statut</label>
-                        <select name="statut">
+                        <select name="actif">
                             <option value="">Tous</option>
-                            <?php foreach ($statuts as $s): ?>
-                                <option value="<?php echo $s; ?>"
-                                    <?php echo $statut_filter === $s ? 'selected' : ''; ?>>
-                                    <?php echo $s; ?>
-                                </option>
-                            <?php endforeach; ?>
+                            <option value="1" <?php echo $actif_filter === '1' ? 'selected' : ''; ?>>Actifs</option>
+                            <option value="0" <?php echo $actif_filter === '0' ? 'selected' : ''; ?>>Inactifs</option>
                         </select>
                     </div>
 
                     <button type="submit" class="btn-primary">Filtrer</button>
-                    <a href="/admin/missions.php" class="btn-secondary">Réinitialiser</a>
+                    <a href="/admin/partenaires.php" class="btn-secondary">Réinitialiser</a>
                 </form>
             </div>
 
-            <!-- Statistiques -->
+            <!-- Statistiques rapides -->
             <div class="stats-mini">
                 <div class="stat-mini">
                     <span class="stat-mini-label">Total partenaires</span>
-                    <span class="stat-mini-value"><?php echo $stats['total']; ?></span>
+                    <span class="stat-mini-value"><?php echo count($partenaires); ?></span>
                 </div>
-
+                <div class="stat-mini">
+                    <span class="stat-mini-label">Actifs</span>
+                    <span class="stat-mini-value"><?php echo count(array_filter($partenaires, fn($p) => $p['Actif'] == 1)); ?></span>
+                </div>
+                <div class="stat-mini">
+                    <span class="stat-mini-label">Total subventions</span>
+                    <span class="stat-mini-value"><?php echo number_format(array_sum(array_column($partenaires, 'TotalSubventions')), 0, ',', ' '); ?> €</span>
+                </div>
             </div>
 
             <!-- Table des partenaires -->
@@ -156,85 +162,61 @@ include __DIR__ . '/components/admin_header.php';
                     <table class="admin-table">
                         <thead>
                         <tr>
-                            <th>Nom partenaire</th>
+                            <th>Nom du partenaire</th>
                             <th>Type</th>
-                            <th>Mail</th>
+                            <th>Email</th>
                             <th>Téléphone</th>
-                            <th>Actif</th>
-
+                            <th>Subventions</th>
+                            <th>Montant total</th>
+                            <th>Statut</th>
+                            <th>Actions</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <?php if (empty($partenaires)): ?>
+                        <?php foreach ($partenaires as $p): ?>
                             <tr>
-                                <td colspan="8" style="text-align: center; padding: 40px;">
-                                    Aucun partenaire trouvé
+                                <td>
+                                    <strong><?php echo htmlspecialchars($p['NomPartenaire']); ?></strong>
+                                </td>
+                                <td>
+                                    <span class="badge badge-type"><?php echo htmlspecialchars($p['TypePartenaire']); ?></span>
+                                </td>
+                                <td><?php echo htmlspecialchars($p['Mail'] ?? '-'); ?></td>
+                                <td><?php echo htmlspecialchars($p['Telephone'] ?? '-'); ?></td>
+                                <td>
+                                    <span class="badge badge-info"><?php echo $p['NbSubventions']; ?></span>
+                                </td>
+                                <td>
+                                    <strong><?php echo number_format($p['TotalSubventions'], 0, ',', ' '); ?> €</strong>
+                                </td>
+                                <td>
+                                    <?php if ($p['Actif']): ?>
+                                        <span class="status-badge status-active">Actif</span>
+                                    <?php else: ?>
+                                        <span class="status-badge status-inactive">Inactif</span>
+                                    <?php endif; ?>
+                                </td>
+                                <td>
+                                    <a href="/admin/partenaires_detail.php?id=<?php echo $p['IDPartenaire']; ?>"
+                                       class="btn-icon" title="Voir">
+                                        <i class="fas fa-eye"></i>
+                                    </a>
+                                    <a href="/admin/partenaires_add.php?id=<?php echo $p['IDPartenaire']; ?>"
+                                       class="btn-icon" title="Modifier">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
+                                    <form method="POST" style="display:inline;"
+                                          onsubmit="return confirm('Êtes-vous sûr ?');">
+                                        <input type="hidden" name="id" value="<?php echo $p['IDPartenaire']; ?>">
+                                        <input type="hidden" name="action" value="<?php echo $p['Actif'] ? 'delete' : 'activate'; ?>">
+                                        <button type="submit" class="btn-icon"
+                                                title="<?php echo $p['Actif'] ? 'Désactiver' : 'Activer'; ?>">
+                                            <i class="fas fa-<?php echo $p['Actif'] ? 'trash' : 'check'; ?>"></i>
+                                        </button>
+                                    </form>
                                 </td>
                             </tr>
-                        <?php else: ?>
-                            <?php foreach ($partenaires as $p): ?>
-                                <tr>
-                                    <td>
-                                        <strong><?php echo htmlspecialchars($m['Titre']); ?></strong>
-                                        <?php if ($m['Description']): ?>
-                                            <br><small style="color: #7f8c8d;">
-                                                <?php echo htmlspecialchars(substr($m['Description'], 0, 60)); ?>...
-                                            </small>
-                                        <?php endif; ?>
-                                    </td>
-                                    <td>
-                                    <span class="badge" style="background: <?php echo $m['Couleur']; ?>">
-                                        <?php echo htmlspecialchars($m['NomCategorie']); ?>
-                                    </span>
-                                    </td>
-                                    <td>
-                                        <i class="fas fa-calendar"></i>
-                                        <?php echo date('d/m/Y', strtotime($m['DateMission'])); ?>
-                                        <br>
-                                        <i class="fas fa-clock"></i>
-                                        <?php echo substr($m['HeureMission'], 0, 5); ?>
-                                    </td>
-                                    <td>
-                                        <i class="fas fa-map-marker-alt"></i>
-                                        <?php echo htmlspecialchars($m['Lieu']); ?>
-                                    </td>
-                                    <td>
-                                    <span class="badge badge-info">
-                                        <?php echo $m['NbInscrits']; ?> / <?php echo $m['NbBenevolesAttendu']; ?>
-                                    </span>
-                                        <?php if ($m['NbInscrits'] >= $m['NbBenevolesAttendu']): ?>
-                                            <i class="fas fa-check-circle" style="color: #2ecc71;"></i>
-                                        <?php endif; ?>
-                                    </td>
-                                    <td><?php echo htmlspecialchars($m['Responsable']); ?></td>
-                                    <td>
-                                    <span class="status-badge status-<?php echo strtolower($m['Statut']); ?>">
-                                        <?php echo htmlspecialchars($m['Statut']); ?>
-                                    </span>
-                                    </td>
-                                    <td>
-                                        <a href="/admin/missions_detail.php?id=<?php echo $m['IDMission']; ?>"
-                                           class="btn-icon" title="Voir">
-                                            <i class="fas fa-eye"></i>
-                                        </a>
-                                        <a href="/admin/missions_edit.php?id=<?php echo $m['IDMission']; ?>"
-                                           class="btn-icon" title="Modifier">
-                                            <i class="fas fa-edit"></i>
-                                        </a>
-                                        <?php if ($m['Statut'] !== 'Annulée'): ?>
-                                            <form method="POST" style="display:inline;"
-                                                  onsubmit="return confirm('Annuler cette mission ?');">
-                                                <input type="hidden" name="id" value="<?php echo $m['IDMission']; ?>">
-                                                <input type="hidden" name="action" value="delete">
-                                                <button type="submit" class="btn-icon" title="Annuler">
-                                                    <i class="fas fa-times"></i>
-                                                </button>
-                                            </form>
-                                        <?php endif; ?>
-                                    </td>
-                                </tr>
-                            <?php endforeach; ?>
-                        <?php endif; ?>
+                        <?php endforeach; ?>
                         </tbody>
                     </table>
                 </div>

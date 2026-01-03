@@ -255,11 +255,4 @@ include __DIR__ . '/components/admin_header.php';
         </div>
     </div>
 
-    <style>
-        .status-en {
-            background: rgba(52, 152, 219, 0.1);
-            color: var(--admin-info);
-        }
-    </style>
-
 <?php include __DIR__ . '/components/admin_footer.php'; ?>
