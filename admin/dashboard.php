@@ -77,7 +77,7 @@ include __DIR__ . '/components/admin_header.php';
                 <a href="/admin/statistiques.php" class="nav-item">
                     <i class="fas fa-chart-bar"></i> Statistiques
                 </a>
-                <a href="/admin/contenus.php" class="nav-item">
+                <a href="/admin/actualites.php" class="nav-item">
                     <i class="fas fa-edit"></i> Contenus
                 </a>
                 <a href="/admin/logout.php" class="nav-item logout">

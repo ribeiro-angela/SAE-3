@@ -29,8 +29,8 @@ $current_page = basename($_SERVER['PHP_SELF']);
         <a href="/admin/statistiques.php" class="nav-item <?php echo $current_page == 'statistiques.php' ? 'active' : ''; ?>">
             <i class="fas fa-chart-bar"></i> <span>Statistiques</span>
         </a>
-        <a href="/admin/contenus.php" class="nav-item <?php echo strpos($current_page, 'contenus') !== false ? 'active' : ''; ?>">
-            <i class="fas fa-edit"></i> <span>Contenus</span>
+        <a href="/admin/actualites.php" class="nav-item <?php echo strpos($current_page, 'actualites') !== false || strpos($current_page, 'medias') !== false ? 'active' : ''; ?>">
+            <i class="fas fa-newspaper"></i> <span>Actualités</span>
         </a>
 
         <div class="sidebar-divider"></div>

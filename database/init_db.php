@@ -14,6 +14,9 @@ try {
     echo "Création des tables...\n";
 
     $sql = "
+
+
+
     CREATE TABLE IF NOT EXISTS VILLE (
         IDVille INTEGER PRIMARY KEY AUTOINCREMENT,
         NomVille TEXT NOT NULL,
@@ -114,6 +117,7 @@ try {
         TypeEvenement TEXT NOT NULL,
         Statut TEXT DEFAULT 'Planifié',
         IDOrganisateur INTEGER NOT NULL,
+        IDTypeEvenement INTEGER REFERENCES TYPE_EVENEMENT(IDTypeEvenement),
         FOREIGN KEY (IDOrganisateur) REFERENCES RESPONSABLE(IDUtilisateur)
     );
 
@@ -133,7 +137,11 @@ try {
         Telephone TEXT,
         Mail TEXT,
         Actif INTEGER DEFAULT 1,
-        DateCreation DATETIME DEFAULT CURRENT_TIMESTAMP
+        DateCreation DATETIME DEFAULT CURRENT_TIMESTAMP,
+        Adresse TEXT,
+        Ville TEXT,
+        CodePostal TEXT,
+        IDTypePartenaire INTEGER REFERENCES TYPE_PARTENAIRE(IDTypePartenaire)
     );
 
     CREATE TABLE IF NOT EXISTS SUBVENTION (
@@ -163,6 +171,124 @@ try {
         IDDonateur INTEGER,
         FOREIGN KEY (IDDonateur) REFERENCES DONATEUR(IDDonateur)
     );
+
+    CREATE TABLE IF NOT EXISTS MATERIEL (
+        IDMateriel INTEGER PRIMARY KEY AUTOINCREMENT,
+        NomMateriel TEXT NOT NULL,
+        DescriptionMateriel TEXT,
+        QuantiteDisponible INTEGER DEFAULT 0
+    );
+ 
+    CREATE TABLE IF NOT EXISTS TACHE_SPECIFIQUE (
+        IDTache INTEGER PRIMARY KEY AUTOINCREMENT,
+        NomTache TEXT NOT NULL,
+        DescriptionTache TEXT
+    );
+
+    CREATE TABLE IF NOT EXISTS NECESSITER (
+        IDMission INTEGER,
+        IDMateriel INTEGER,
+        QuantiteNecessaire INTEGER DEFAULT 1,
+        PRIMARY KEY (IDMission, IDMateriel),
+        FOREIGN KEY (IDMission) REFERENCES MISSIONS(IDMission) ON DELETE CASCADE,
+        FOREIGN KEY (IDMateriel) REFERENCES MATERIEL(IDMateriel) ON DELETE CASCADE
+    );
+
+    CREATE TABLE IF NOT EXISTS CONTENIR (
+        IDMission INTEGER,
+        IDTache INTEGER,
+        PRIMARY KEY (IDMission, IDTache),
+        FOREIGN KEY (IDMission) REFERENCES MISSIONS(IDMission) ON DELETE CASCADE,
+        FOREIGN KEY (IDTache) REFERENCES TACHE_SPECIFIQUE(IDTache) ON DELETE CASCADE
+    );
+
+    CREATE TABLE IF NOT EXISTS TYPE_EVENEMENT (
+        IDTypeEvenement INTEGER PRIMARY KEY AUTOINCREMENT,
+        NomTypeEvenement TEXT NOT NULL UNIQUE,
+        DescriptionTypeEvenement TEXT
+    );
+
+    CREATE TABLE IF NOT EXISTS TYPE_PARTENAIRE (
+        IDTypePartenaire INTEGER PRIMARY KEY AUTOINCREMENT,
+        NomTypePartenaire TEXT NOT NULL UNIQUE,
+        DescriptionTypePartenaire TEXT
+    );
+
+    CREATE TABLE IF NOT EXISTS TYPE_SOUTIEN (
+        IDTypeSoutien INTEGER PRIMARY KEY AUTOINCREMENT,
+        NomTypeSoutien TEXT NOT NULL UNIQUE
+    );
+
+    CREATE TABLE IF NOT EXISTS CONTACT (
+        IDContact INTEGER PRIMARY KEY AUTOINCREMENT,
+        NomContact TEXT NOT NULL,
+        PrenomContact TEXT,
+        TelephoneContact TEXT,
+        MailContact TEXT,
+        FonctionContact TEXT,
+        IDPartenaire INTEGER,
+        FOREIGN KEY (IDPartenaire) REFERENCES PARTENAIRE(IDPartenaire) ON DELETE CASCADE
+    );
+
+    CREATE TABLE IF NOT EXISTS CONVENTION (
+        IDConvention INTEGER PRIMARY KEY AUTOINCREMENT,
+        NomConvention TEXT NOT NULL,
+        DateSignature DATE,
+        DateFin DATE,
+        DescriptionConvention TEXT,
+        Statut TEXT DEFAULT 'Active',
+        IDPartenaire INTEGER,
+        FOREIGN KEY (IDPartenaire) REFERENCES PARTENAIRE(IDPartenaire)
+    );
+
+    CREATE TABLE IF NOT EXISTS AIDE (
+        IDAide INTEGER PRIMARY KEY AUTOINCREMENT,
+        TypeAide TEXT NOT NULL,
+        Montant REAL,
+        DateAide DATE,
+        IDPartenaire INTEGER,
+        IDMission INTEGER,
+        IDEvenement INTEGER,
+        FOREIGN KEY (IDPartenaire) REFERENCES PARTENAIRE(IDPartenaire),
+        FOREIGN KEY (IDMission) REFERENCES MISSIONS(IDMission) ON DELETE CASCADE,
+        FOREIGN KEY (IDEvenement) REFERENCES EVENEMENT(IDEvenement) ON DELETE CASCADE
+    );
+
+    CREATE TABLE IF NOT EXISTS ACTUALITE (
+        IDActualite INTEGER PRIMARY KEY AUTOINCREMENT,
+        Titre TEXT NOT NULL,
+        Contenu TEXT,
+        DatePublication DATE DEFAULT CURRENT_DATE,
+        Statut TEXT DEFAULT 'Brouillon',
+        ImageURL TEXT,
+        IDAuteur INTEGER,
+        FOREIGN KEY (IDAuteur) REFERENCES UTILISATEUR(IDUtilisateur)
+    );
+
+    CREATE TABLE IF NOT EXISTS MEDIA (
+        IDMedia INTEGER PRIMARY KEY AUTOINCREMENT,
+        NomFichier TEXT NOT NULL,
+        CheminFichier TEXT NOT NULL,
+        TypeMedia TEXT NOT NULL,
+        DateAjout DATETIME DEFAULT CURRENT_TIMESTAMP,
+        IDMission INTEGER,
+        IDEvenement INTEGER,
+        IDActualite INTEGER,
+        FOREIGN KEY (IDMission) REFERENCES MISSIONS(IDMission) ON DELETE CASCADE,
+        FOREIGN KEY (IDEvenement) REFERENCES EVENEMENT(IDEvenement) ON DELETE CASCADE,
+        FOREIGN KEY (IDActualite) REFERENCES ACTUALITE(IDActualite) ON DELETE CASCADE
+    );
+
+    CREATE TABLE IF NOT EXISTS COTISATION (
+            IDCotisation INTEGER PRIMARY KEY AUTOINCREMENT,
+            MontantCotisation REAL NOT NULL,
+            DateCotisation DATE NOT NULL,
+            AnneeValidite INTEGER NOT NULL,
+            Statut TEXT DEFAULT 'Payée',
+            IDUtilisateur INTEGER NOT NULL,
+            FOREIGN KEY (IDUtilisateur) REFERENCES BENEVOLES(IDUtilisateur) ON DELETE CASCADE
+        );
+
     ";
 
     $db->exec($sql);
@@ -211,6 +337,49 @@ try {
         ('Logistique', '#f39c12'),
         ('Animation', '#9b59b6'),
         ('Maraude', '#1abc9c');
+
+        INSERT OR IGNORE INTO MATERIEL (NomMateriel, DescriptionMateriel, QuantiteDisponible) VALUES
+        ('Cartons de collecte', 'Cartons pour collecter les denrées', 100),
+        ('Tables pliantes', 'Tables pour distributions', 20),
+        ('Chaises pliantes', 'Chaises pour événements', 50),
+        ('Vaisselle jetable', 'Assiettes, couverts, gobelets', 500),
+        ('Nappes', 'Nappes jetables ou réutilisables', 30),
+        ('Microphone', 'Microphone sans fil', 5),
+        ('Enceintes portables', 'Enceintes pour sonorisation', 4),
+        ('Banderoles', 'Banderoles de signalisation', 10);
+
+        INSERT OR IGNORE INTO TACHE_SPECIFIQUE (NomTache, DescriptionTache) VALUES
+        ('Tri des denrées', 'Trier les aliments par catégorie'),
+        ('Transport', 'Transporter le matériel et les denrées'),
+        ('Stockage', 'Ranger et stocker les produits'),
+        ('Distribution', 'Distribuer aux bénéficiaires'),
+        ('Accueil', 'Accueillir les participants'),
+        ('Animation', 'Animer les activités'),
+        ('Cuisine', 'Préparer les repas'),
+        ('Nettoyage', 'Nettoyer les espaces après événement');
+
+        INSERT OR IGNORE INTO TYPE_EVENEMENT (NomTypeEvenement, DescriptionTypeEvenement) VALUES
+        ('Pot de bienvenue', 'Événement d''accueil des nouveaux bénévoles'),
+        ('Réunion', 'Réunion d''équipe ou de coordination'),
+        ('Formation', 'Formation pour les bénévoles'),
+        ('Collecte', 'Événement de collecte de dons'),
+        ('Fête', 'Événement festif'),
+        ('Distribution', 'Distribution alimentaire ou vestimentaire');
+
+        INSERT OR IGNORE INTO TYPE_PARTENAIRE (NomTypePartenaire, DescriptionTypePartenaire) VALUES
+        ('Entreprise', 'Partenaire privé - entreprise'),
+        ('Fondation', 'Fondation philanthropique'),
+        ('Institution publique', 'Collectivité ou organisme public'),
+        ('Association', 'Association partenaire'),
+        ('Particulier', 'Grand donateur individuel');
+
+        INSERT OR IGNORE INTO TYPE_SOUTIEN (NomTypeSoutien) VALUES
+        ('Financier'),
+        ('Matériel'),
+        ('Logistique'),
+        ('Compétences'),
+        ('Mise à disposition de locaux');
+
     ");
 
     echo "✅ Données de référence insérées\n\n";
@@ -238,6 +407,7 @@ try {
     echo "✅ Compte admin créé\n";
     echo "   Email: admin@armeedusalut.fr\n";
     echo "   Mot de passe: admin123\n\n";
+
 
     echo "=== INITIALISATION TERMINÉE AVEC SUCCÈS ===\n";
 
